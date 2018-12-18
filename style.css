@@ -1,0 +1,233 @@
+* {
+    font-family: 'Montserrat', sans-serif;
+
+
+}
+
+body {
+    margin: 0;
+    max-width: 100%;
+}
+
+h1 {
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 48pt;
+    color: #FDFFFC;
+
+}
+
+h3 {
+    font-family: 'Montserrat SemiBold', sans-serif;
+    font-size: 36pt;
+    color: #FDFFFC;
+}
+p {
+    font-family: 'Montserrat Medium', sans-serif;
+    font-size: 15pt;
+    color: #FDFFFC;
+}
+/* Main container */
+.main-container {
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    float: right;
+    flex-direction: column;
+    background-image: url("img/background5-cvmaker.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Header */
+
+.header-container {
+    margin: 2%;
+    padding: 2%;
+}
+
+.main-text-logo p {
+    font-family: 'Montserrat ExtraBold', sans-serif;
+    font-size: 40px;
+    float: left;
+
+}
+
+.main-text-logo a {
+    text-decoration: none;
+    color: #FDFFFC;
+    -webkit-transition: ease-in-out 0.4s;
+}
+
+.main-text-logo a:hover {
+    color: #2EC4B6;
+    -webkit-transition: ease-in-out 0.4s;
+}
+
+
+/* Navigatie */
+
+.navigation {
+    display: flex;
+    flex-direction: row;
+    float: right;
+    list-style-type: none;
+
+
+}
+
+.navigation li {
+    margin: 0 20px 0 0;
+    flex-direction: column;
+
+
+}
+
+.navigation li a {
+    text-decoration: none;
+    color: #FDFFFC;
+    -webkit-transition: ease-in-out 0.4s;
+
+}
+
+.navigation li a:hover {
+    color: #2EC4B6;
+    -webkit-transition: ease-in-out 0.4s;
+    list-style-type: none;
+}
+
+/* Splash container */
+
+.full-splash-container {
+    width: 98vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+
+}
+
+.full-splash-container h1 {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.full-splash-container p {
+    text-align: center;
+}
+
+.button-cv-maken {
+    border: 2.3px solid #FFFFFF;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 225px;
+    color: #FFFFFF;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition: ease-in-out 0.2s;
+    background: linear-gradient(to right, #E1870D 50%, #FF9F1C 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+
+}
+
+.button-cv-maken:hover {
+    background-position: left bottom;
+    color: #FFFFFF;
+}
+
+/* Banner */
+
+.big-parts-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 100%;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    vertical-align: center;
+    align-items: center;
+    justify-content: center;
+
+
+    /* Achtergrond afbeelding van banner */
+
+
+
+}
+
+.part-of-banner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    float: left;
+    vertical-align: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    background-color: #FDFFFC;
+    -webkit-box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
+    -moz-box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
+    box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
+    color: #FF9F1C;
+    
+
+
+
+
+
+}
+
+.part-of-banner h1 {
+    color: #FF9F1C;
+}
+
+.part-of-banner p {
+    color: #FF9F1C;
+
+}
+
+
+
+#part-1 {
+    width: 100%;
+    height: 90%;
+    text-align: center;
+    border: 2.3px solid #FF9F1C;
+
+}
+
+#part-2 {
+
+    height: 100%;
+    border: 2.3px solid #FF9F1C;
+
+
+}
+
+#part-3 {
+
+    height: 100%;
+    border: 2.3px solid #FF9F1C;
+    float: right;
+
+}
+
+@media only screen and (max-width: 600px) {
+    .part-of-banner {
+        display: flex;
+        flex-direction: column;
+    }
+}
