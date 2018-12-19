@@ -1,6 +1,6 @@
 * {
     font-family: 'Montserrat', sans-serif;
-
+    overflow-x: hidden;
 
 }
 
@@ -51,6 +51,8 @@ p {
     font-family: 'Montserrat ExtraBold', sans-serif;
     font-size: 40px;
     float: left;
+    position: absolute;
+    top: 5%;
 
 }
 
@@ -104,7 +106,7 @@ p {
     height: 100vh;
     justify-content: center;
     align-items: center;
-    left: 50%;
+
 
 }
 
@@ -152,8 +154,7 @@ p {
     flex-direction: row;
     width: 90%;
     height: 100%;
-    margin: 20px;
-    padding: 20px;
+    margin: 60px;
     text-align: center;
     vertical-align: center;
     align-items: center;
@@ -182,7 +183,7 @@ p {
     -moz-box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
     box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
     color: #FF9F1C;
-    
+
 
 
 
@@ -191,43 +192,67 @@ p {
 }
 
 .part-of-banner h1 {
-    color: #FF9F1C;
+    color: #2EC4B6;
 }
 
 .part-of-banner p {
-    color: #FF9F1C;
+    color: #2EC4B6;
 
 }
 
 
 
 #part-1 {
-    width: 100%;
+    width: 70%;
     height: 90%;
     text-align: center;
-    border: 2.3px solid #FF9F1C;
+    margin: 20px;
+    padding: 20px;
+
+
 
 }
 
 #part-2 {
 
-    height: 100%;
-    border: 2.3px solid #FF9F1C;
+    width: 70%;
+    height: 90%;
+    margin: 20px;
+    padding: 20px;
+
 
 
 }
 
 #part-3 {
 
-    height: 100%;
-    border: 2.3px solid #FF9F1C;
+    width: 70%;
+    height: 90%;
+    margin: 20px;
+    padding: 20px;
+
     float: right;
 
 }
 
 @media only screen and (max-width: 600px) {
+
+    * {
+        max-width: 100%;
+    }
+
+    .main-text-logo {
+        position: absolute;
+        top: 5%;
+    }
     .part-of-banner {
         display: flex;
         flex-direction: column;
+    }
+
+    .big-parts-container {
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
     }
 }
