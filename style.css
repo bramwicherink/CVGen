@@ -11,7 +11,7 @@ body {
 
 h1 {
     font-family: 'Montserrat ExtraBold', sans-serif;
-    font-size: 48pt;
+    font-size: 42pt;
     color: #FDFFFC;
 
 }
@@ -128,7 +128,7 @@ p {
     margin-right: auto;
     width: 225px;
     color: #FFFFFF;
-    padding: 15px 32px;
+    padding: 20px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -149,6 +149,11 @@ p {
 
 /* Banner */
 
+.uitleg-title {
+    position: absolute;
+    top: 100%;
+}
+
 .big-parts-container {
     display: flex;
     flex-direction: row;
@@ -161,7 +166,6 @@ p {
     justify-content: center;
 
 
-    /* Achtergrond afbeelding van banner */
 
 
 
@@ -178,7 +182,7 @@ p {
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    background-color: #FDFFFC;
+    background-color: #FFFFFF;
     -webkit-box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
     -moz-box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
     box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
@@ -192,11 +196,11 @@ p {
 }
 
 .part-of-banner h1 {
-    color: #2EC4B6;
+    color: #FF9F1C;
 }
 
 .part-of-banner p {
-    color: #2EC4B6;
+    color: #FF9F1C;
 
 }
 
@@ -252,7 +256,7 @@ p {
 
     .big-parts-container {
         flex-direction: column;
-        margin: 0;
+        margin: 20px;
         padding: 0;
     }
 }
