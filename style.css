@@ -310,6 +310,7 @@ p {
     font-family: 'Montserrat ExtraBold', sans-serif;
     font-size: 15px;
     width: 25%;
+    cursor: pointer;
 }
 
 .back {

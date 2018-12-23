@@ -35,6 +35,8 @@
     <div class="big-parts-container">
         <div class="part-of-banner" id="part-1">
             <h1>Invullen</h1>
+
+
             <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam"><br>
             <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" /><br>
             <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adres" /><br>
@@ -46,18 +48,21 @@
             <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit"/>
             <!-- <input type="button" id="button" value="Maak mijn CV!"/> -->
 
+
+
             <button class="button next">Volgende</button>
         </div>
 
         <div class="part-of-banner" id="part-2" style="display:none;">
         <h1>Testje 2</h1>
+            <div class="input_fields_wrap">
         <input class="input-field" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>
         <input class="input-field" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>
-        <input class="input-field" type="text" id="startdatum" value="" placeholder="Startdatum opleiding" /><br>
-        <input class="input-field" type="text" id="einddatum" value="" placeholder="Einddatum opleiding"/><br>
+        <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value="" placeholder="Startdatum opleiding" /><br>
+        <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value="" placeholder="Einddatum opleiding"/><br>
         <input class="input-field" type="text" id="overige_informatie"  value="" placeholder="Overige informatie"/><br>
 
-            <button class="button remove_field">Verwijder opleiding</button>
+            <button class="button add_field_button" id="opleiding_toevoegen" value="Opleiding toevoegen">Opleiding toevoegen</button>
         <button class="button back">Vorige</button>
 
     </div>
