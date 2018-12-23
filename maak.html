@@ -63,7 +63,8 @@
         <input class="input-field" type="text" id="overige_informatie"  value="" placeholder="Overige informatie"/><br>
 
             <button class="button add_field_button" id="opleiding_toevoegen" value="Opleiding toevoegen">Opleiding toevoegen</button>
-        <button class="button back">Vorige</button>
+            <button class="button back">Vorige</button>
+            <button class="button button-cv-maken">Maak mijn CV!</button>
 
     </div>
 
@@ -88,6 +89,68 @@
                         '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
                         '                        <a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
                 }
+                $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+                    e.preventDefault(); $(this).parent('div').remove(); x--;
+                })
+            });
+
+            $('.button-cv-maken').click(function() {
+
+                let doc = new jsPDF();
+                doc.addImage(imgData, 'JPEG',0,0,210,297);
+                doc.setTextColor(0.7544, 0.4035, 0.0000, 0.5529);
+
+
+                let voornaam = $('#voornaam').val();
+                let achternaam = $('#achternaam').val();
+                let adresgegevens = $('#adresgegevens').val();
+                let telefoon = $('#telefoon').val();
+                let email = $('#email').val();
+                let geboortedatum = $('#geboortedatum').val();
+                let geboorteplaats = $('#geboorteplaats').val();
+                let nationaliteit = $('#nationaliteit').val();
+
+                let naamOpleiding = $('#naam_opleiding').val();
+                let naamInstituut = $('#naam_instituut').val();
+                let startdatum = $('#startdatum').val();
+                let einddatum = $('#einddatum').val();
+                let overigeInformatie = $('#overige_informatie').val();
+
+
+
+
+                doc.text(40, 27, voornaam);
+                doc.setFontSize(10);
+
+
+                doc.text(40, 32, achternaam);
+                doc.text(40, 37, adresgegevens);
+                doc.text(40, 42, telefoon);
+                doc.text(40, 47, email);
+                doc.text(40, 52, geboortedatum);
+                doc.text(40, 57, geboorteplaats);
+                doc.text(40, 67, nationaliteit);
+
+
+
+                doc.text(110, 67, naamOpleiding);
+                doc.text(110, 72, naamInstituut);
+                doc.text(110, 77, startdatum);
+                doc.text(110, 82, einddatum);
+                doc.text(110, 87, overigeInformatie);
+
+
+
+
+
+
+
+                doc.save('test.pdf');
+
+
+
+
+
             });
 
 

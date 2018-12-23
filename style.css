@@ -293,6 +293,11 @@ p {
     margin: 0;
     padding: 0;
     height: 15px;
+    overflow: hidden;
+}
+
+.input-field a {
+    text-decoration: none;
 }
 
 ::placeholder {
