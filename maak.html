@@ -7,9 +7,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>CVGen</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="jspdf.min.js"></script>
+    <script src="jspdf.debug.js"></script>
+    <script src="js/templates_base64/template1.js"></script>
+    <script src="js/formToPDF/formToPDF.js"></script>
+    <script src="jQuery.js"></script>
 </head>
 <body>
-<div class="main-container">
+<div class="main-container-cvmaken">
     <header class="header-container">
         <div class="main-text-logo"><a href="index.html"><p>CVGen.</p></a></div>
         <ul class="navigation">
@@ -19,46 +26,128 @@
         </ul>
     </header>
 
-    <div class="full-splash-container">
-        <h1>Een CV maken moeilijk?</h1>
-        <p>Dacht het niet.</p>
 
-        <a href="maak2.html" class="button-cv-maken">Start met mijn CV maken!</a>
 
-    </div>
+
 
 
 
     <div class="big-parts-container">
-        <div class="uitleg-title">
-            <h3>In drie stappen jouw CV.</h3>
-        </div>
         <div class="part-of-banner" id="part-1">
             <h1>Invullen</h1>
-            <p> Je kunt wel een bureau inschakelen dat een mooi CV voor je ontwerpt, maar de vraag is: waarom?
-                Je kent jezelf het best. Jij bent de expert, jij weet het meest over jezelf dan wie dan ook ter wereld.
-                Wij helpen je daarbij. Wij maken het design, als jij de gegevens invult.
-                Heb je tenminste ook nog tijd over voor andere dingen. Net zo belangrijk.
-            </p>
+            <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam"><br>
+            <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" /><br>
+            <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adres" /><br>
+            <input class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer"/><br>
+            <input class="input-field" type="text" id="email"  value="" placeholder="E-mailadres"/><br>
+            <input class="input-field" type="date" id="geboortedatum" value="" placeholder="Geboortedatum"/><br>
+            <input class="input-field" type="text" id="geboorteplaats" value="" placeholder="Geboorteplaats"/><br>
+
+            <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit"/>
+            <!-- <input type="button" id="button" value="Maak mijn CV!"/> -->
+
+            <button class="button next">Volgende</button>
         </div>
-        <div class="part-of-banner" id="part-2">
-            <h1>Controle</h1>
-            <p> Je hebt je gegevens ingevuld. Appeltje eitje. Het moeilijkste stuk heb je al overwonnen.
-                Nu is het belangrijk dat je controleert of alle gegevens volledig juist zijn: zou zonde zijn anders.
-                <br><br><br>Klopt alles? 100% zeker? Dan gaan wij aan de slag.
-            </p>
-        </div>
-        <div class="part-of-banner" id="part-3">
-            <h1>Relaxen</h1>
-            <p> Sit back and relax. Ging prima toch?
-                Je hebt alles gecontroleerd. Tijd om ons aan het werk te zetten, werd tijd.
-                Binnen enkele seconden hebben wij een hoogwaardig CV voor jou in elkaar gezet. En het mooiste van alles: het is helemaal gratis.
-                Ben je benieuwd en wil je het zelf ervaren?
-                <br><br>Wacht niet langer, hup, begin snel!
-            </p>
-        </div>
+
+        <div class="part-of-banner" id="part-2" style="display:none;">
+        <h1>Testje 2</h1>
+        <input class="input-field" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>
+        <input class="input-field" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>
+        <input class="input-field" type="text" id="startdatum" value="" placeholder="Startdatum opleiding" /><br>
+        <input class="input-field" type="text" id="einddatum" value="" placeholder="Einddatum opleiding"/><br>
+        <input class="input-field" type="text" id="overige_informatie"  value="" placeholder="Overige informatie"/><br>
+
+            <button class="button remove_field">Verwijder opleiding</button>
+        <button class="button back">Vorige</button>
+
     </div>
 
+    <script>
+
+
+        $(document).ready(function() {
+            var max_fields      = 5; // Maximaal aantal toegestane velden
+            var wrapper   		= $(".input_fields_wrap");
+            var add_button      = $(".add_field_button");
+
+            var x = 1; //initlal text box count
+            $(add_button).click(function(e){ //on add input button click
+                e.preventDefault();
+                if(x < max_fields){ //max input box allowed
+                    x++; //text box increment
+                    $(wrapper).append('<div><br><br>' +
+                        '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
+                        '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
+                        '                        <input class="input-field" name="mytext[]" type="text" id="startdatum" value="" placeholder="Startdatum" /><br>\n' +
+                        '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
+                        '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
+                        '                        <a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
+                }
+            });
+
+
+        });
+
+
+
+
+        $('#button').click(function() {
+
+                let doc = new jsPDF();
+                doc.addImage(imgData, 'JPEG', 0, 0, 210, 297);
+                doc.setTextColor(255, 255, 255);
+
+
+                let voornaam = $('#voornaam').val();
+                let achternaam = $('#achternaam').val();
+                let adresgegevens = $('#adresgegevens').val();
+                let telefoon = $('#telefoon').val();
+                let email = $('#email').val();
+                let geboortedatum = $('#geboortedatum').val();
+                let geboorteplaats = $('#geboorteplaats').val();
+                let nationaliteit = $('#nationaliteit').val();
+
+                doc.text(40, 27, voornaam);
+                doc.setFontSize(10);
+
+
+                doc.text(40, 32, achternaam);
+                doc.text(40, 37, adresgegevens);
+                doc.text(40, 42, telefoon);
+                doc.text(40, 47, email);
+                doc.text(40, 52, geboortedatum);
+                doc.text(40, 57, geboorteplaats);
+                doc.text(40, 67, nationaliteit);
+
+
+                doc.save('test.pdf');
+
+
+            });
+
+
+
+
+
+
+        </script>
+    </div>
+
+
+
+    <script>
+
+
+
+        $('.next').click(function(){
+
+            $(this).parent().hide().next().show();//hide parent and show next
+        });
+
+        $('.back').click(function(){
+            $(this).parent().hide().prev().show();//hide parent and show previous
+        });
+    </script>
 
 
 
