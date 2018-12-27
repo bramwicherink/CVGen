@@ -14,6 +14,7 @@
     <script src="js/templates_base64/template1.js"></script>
     <script src="js/formToPDF/formToPDF.js"></script>
     <script src="jQuery.js"></script>
+    <script src="javascript.js"></script>
 </head>
 <body>
 <div class="main-container-cvmaken">
@@ -22,7 +23,7 @@
         <ul class="navigation">
             <li><a href="index.html">Home</a></li>
             <li><a href="maak.html">CV Maken</a></li>
-            <li><a href="help.html">Huh?</a></li>
+
         </ul>
     </header>
 
@@ -35,18 +36,22 @@
     <div class="big-parts-container">
         <div class="part-of-banner" id="part-1">
             <h1>Invullen</h1>
+            <p>Personalia</p>
 
 
-            <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam"><br>
-            <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" /><br>
-            <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adres" /><br>
-            <input class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer"/><br>
-            <input class="input-field" type="text" id="email"  value="" placeholder="E-mailadres"/><br>
-            <input class="input-field" type="date" id="geboortedatum" value="" placeholder="Geboortedatum"/><br>
-            <input class="input-field" type="text" id="geboorteplaats" value="" placeholder="Geboorteplaats"/><br>
 
-            <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit"/>
+            <input required class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam" ><br>
+            <input required class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam"  /><br>
+            <input required class="input-field" type="text" id="adresgegevens" value="" placeholder="Adres"  /><br>
+            <input required class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer"  /><br>
+            <input required class="input-field" type="text" id="email"  value="" placeholder="E-mailadres"  /><br>
+            <input required class="input-field" type="date" id="geboortedatum" value="" placeholder="Geboortedatum"  /><br>
+            <input required class="input-field" type="text" id="geboorteplaats" value="" placeholder="Geboorteplaats"  /><br>
+
+            <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit" required />
             <!-- <input type="button" id="button" value="Maak mijn CV!"/> -->
+
+
 
 
 
@@ -54,7 +59,8 @@
         </div>
 
         <div class="part-of-banner" id="part-2" style="display:none;">
-        <h1>Testje 2</h1>
+        <h1>Invullen</h1>
+            <p>Studies en opleidingen</p>
             <div class="input_fields_wrap">
         <input class="input-field" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>
         <input class="input-field" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>
@@ -66,139 +72,11 @@
             <button class="button back">Vorige</button>
             <button class="button button-cv-maken">Maak mijn CV!</button>
 
+
+
     </div>
 
-    <script>
-
-
-        $(document).ready(function() {
-            var max_fields      = 5; // Maximaal aantal toegestane velden
-            var wrapper   		= $(".input_fields_wrap");
-            var add_button      = $(".add_field_button");
-
-            var x = 1; //initlal text box count
-            $(add_button).click(function(e){ //on add input button click
-                e.preventDefault();
-                if(x < max_fields){ //max input box allowed
-                    x++; //text box increment
-                    $(wrapper).append('<div><br><br>' +
-                        '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="startdatum" value="" placeholder="Startdatum" /><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
-                        '                        <a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
-                }
-                $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
-                    e.preventDefault(); $(this).parent('div').remove(); x--;
-                })
-            });
-
-            $('.button-cv-maken').click(function() {
-
-                let doc = new jsPDF();
-                doc.addImage(imgData, 'JPEG',0,0,210,297);
-                doc.setTextColor(0.7544, 0.4035, 0.0000, 0.5529);
-
-
-                let voornaam = $('#voornaam').val();
-                let achternaam = $('#achternaam').val();
-                let adresgegevens = $('#adresgegevens').val();
-                let telefoon = $('#telefoon').val();
-                let email = $('#email').val();
-                let geboortedatum = $('#geboortedatum').val();
-                let geboorteplaats = $('#geboorteplaats').val();
-                let nationaliteit = $('#nationaliteit').val();
-
-                let naamOpleiding = $('#naam_opleiding').val();
-                let naamInstituut = $('#naam_instituut').val();
-                let startdatum = $('#startdatum').val();
-                let einddatum = $('#einddatum').val();
-                let overigeInformatie = $('#overige_informatie').val();
-
-
-
-
-                doc.text(40, 27, voornaam);
-                doc.setFontSize(10);
-
-
-                doc.text(40, 32, achternaam);
-                doc.text(40, 37, adresgegevens);
-                doc.text(40, 42, telefoon);
-                doc.text(40, 47, email);
-                doc.text(40, 52, geboortedatum);
-                doc.text(40, 57, geboorteplaats);
-                doc.text(40, 67, nationaliteit);
-
-
-
-                doc.text(110, 67, naamOpleiding);
-                doc.text(110, 72, naamInstituut);
-                doc.text(110, 77, startdatum);
-                doc.text(110, 82, einddatum);
-                doc.text(110, 87, overigeInformatie);
-
-
-
-
-
-
-
-                doc.save('CV ' + voornaam + ' ' + achternaam + '.pdf');
-
-
-
-
-
-            });
-
-
-        });
-
-
-
-
-        $('#button').click(function() {
-
-                let doc = new jsPDF();
-                doc.addImage(imgData, 'JPEG', 0, 0, 210, 297);
-                doc.setTextColor(255, 255, 255);
-
-
-                let voornaam = $('#voornaam').val();
-                let achternaam = $('#achternaam').val();
-                let adresgegevens = $('#adresgegevens').val();
-                let telefoon = $('#telefoon').val();
-                let email = $('#email').val();
-                let geboortedatum = $('#geboortedatum').val();
-                let geboorteplaats = $('#geboorteplaats').val();
-                let nationaliteit = $('#nationaliteit').val();
-
-                doc.text(40, 27, voornaam);
-                doc.setFontSize(10);
-
-
-                doc.text(40, 32, achternaam);
-                doc.text(40, 37, adresgegevens);
-                doc.text(40, 42, telefoon);
-                doc.text(40, 47, email);
-                doc.text(40, 52, geboortedatum);
-                doc.text(40, 57, geboorteplaats);
-                doc.text(40, 67, nationaliteit);
-
-
-                doc.save('test.pdf');
-
-
-            });
-
-
-
-
-
-
-        </script>
+    <script src="jQuery.js"></script>
     </div>
 
 
@@ -207,16 +85,10 @@
 
 
 
-        $('.next').click(function(){
 
-            $(this).parent().hide().next().show();//hide parent and show next
-        });
-
-        $('.back').click(function(){
-            $(this).parent().hide().prev().show();//hide parent and show previous
-        });
     </script>
 
 
 
 </div> <!-- Einde main-container -->
+</div>
