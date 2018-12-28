@@ -33,19 +33,23 @@
 
 
     <div class="big-parts-container">
+
         <div class="part-of-banner" id="part-1">
             <h1>Invullen</h1>
 
-
+        <div class="form-left">
             <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam"><br>
             <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" /><br>
             <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adres" /><br>
             <input class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer"/><br>
             <input class="input-field" type="text" id="email"  value="" placeholder="E-mailadres"/><br>
+            </div>
+            <div class="form-right">
             <input class="input-field" type="date" id="geboortedatum" value="" placeholder="Geboortedatum"/><br>
             <input class="input-field" type="text" id="geboorteplaats" value="" placeholder="Geboorteplaats"/><br>
 
             <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit"/>
+                </div>
             <!-- <input type="button" id="button" value="Maak mijn CV!"/> -->
 
 
@@ -119,6 +123,8 @@
 
 
 
+
+
                 doc.text(40, 27, voornaam);
                 doc.setFontSize(10);
 
@@ -132,20 +138,22 @@
                 doc.text(40, 67, nationaliteit);
 
 
+                doc.setFontSize(25);
+                doc.text(110, 27, naamOpleiding);
 
-                doc.text(110, 67, naamOpleiding);
-                doc.text(110, 72, naamInstituut);
-                doc.text(110, 77, startdatum);
-                doc.text(110, 82, einddatum);
-                doc.text(110, 87, overigeInformatie);
-
-
-
-
+                doc.setFontSize(10);
+                doc.text(110, 32, naamInstituut);
+                doc.text(110, 37, startdatum);
+                doc.text(110, 42, einddatum);
+                doc.text(110, 47, overigeInformatie);
 
 
 
-                doc.save('test.pdf');
+
+
+
+
+                doc.save('CV ' + voornaam + '' + achternaam + '.pdf');
 
 
 

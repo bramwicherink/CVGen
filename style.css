@@ -158,20 +158,35 @@ p {
 
 .big-parts-container {
     display: flex;
+    float:left;
     flex-direction: row;
     width: 90%;
     height: 100%;
     margin: 60px;
     text-align: center;
-    vertical-align: center;
-    align-items: center;
     justify-content: center;
+    overflow: hidden;
 
 
 
 
 
 }
+.form-container {
+    display: flex;
+}
+.form-left {
+    width:50%;
+    float:left;
+    background-color: #E1870D;
+    flex-direction:column;
+}
+.form-right {
+    width:50%;
+    background-color: #1E2148;
+    float:right;
+}
+
 
 .part-of-banner {
     display: flex;
@@ -184,28 +199,28 @@ p {
     justify-content: center;
     text-align: center;
     flex-direction: column;
-    background-color: #1E2148;
-    -webkit-box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
-    -moz-box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
-    box-shadow: 2px 10px 14px -6px rgba(0,0,0,0.31);
-    border-radius: 10px;
-    color: #FFFFFF;
-
-
-
-
-
+    background-color: #FFFFFF;
+    -webkit-box-shadow: 12px 13px 74px -26px rgba(0,0,0,1);
+    -moz-box-shadow: 12px 13px 74px -26px rgba(0,0,0,1);
+    box-shadow: 12px 13px 74px -26px rgba(0,0,0,1);
+    -webkit-transition: ease-in-out 0.2s;
 
 
 }
 
 .part-of-banner h1 {
-    color: #FFFFFF;
+    color: #1E2148;
 }
 
 .part-of-banner p {
-    color: #FFFFFF;
+    color: #1E2148;
+    font-family: 'Montserrat Light', sans-serif;
 
+}
+
+.part-of-banner:hover {
+    transform: scale(1.05);
+    -webkit-transition: ease-in-out 0.2s;
 }
 
 
@@ -216,6 +231,7 @@ p {
     text-align: center;
     margin: 20px;
     padding: 20px;
+
 
 
 
@@ -278,22 +294,36 @@ p {
     display: flex;
     float: right;
     flex-direction: column;
-    background-color: #171A3D;
+    background-color: #E1870D;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
+
 .input-field {
-    background-color: #1E2148;
+    background-color: #FFFFFF;
     outline-style: none;
-    border: 0;
-    width: 100%;
     text-align: center;
-    color: #FFFFFF;
-    font-family: 'Montserrat ExtraLight', sans-serif;
+    color: #1E2148;
+    font-family: 'Montserrat Medium', sans-serif;
     font-size: 15px;
     margin: 0;
-    padding: 0;
-    height: 15px;
     overflow: hidden;
+
+    border-radius: 25px;
+    border: 2px solid #1E2148;
+    padding: 20px;
+    width: 200px;
+    height: 15px;
+}
+
+.input-field:focus {
+    border: none;
+    background-color: #1E2148;
+    color: #FFFFFF;
+
 }
 
 .input-field a {
@@ -301,7 +331,8 @@ p {
 }
 
 ::placeholder {
-    color: #FFFFFF;
+    color: #1E2148;
+    font-family: 'Montserrat Medium', sans-serif;
 }
 
 .button {
