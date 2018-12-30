@@ -93,7 +93,7 @@
                         '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
                         '                        <a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
                 }
-                $(wrapper).on("click",".remove_field", function(e){ // Wanneer er op verwijderen van opleiding wordt geklikt. 
+                $(wrapper).on("click",".remove_field", function(e){ // Wanneer er op verwijderen van opleiding wordt geklikt.
                     e.preventDefault(); $(this).parent('div').remove(); x--;
                 })
             });

@@ -24,21 +24,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maak.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="maak.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maak.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="633">
-              <caret line="95" column="126" lean-forward="false" selection-start-line="95" selection-start-column="126" selection-end-line="95" selection-end-column="126" />
+              <caret line="95" column="125" lean-forward="false" selection-start-line="95" selection-start-column="125" selection-end-line="95" selection-end-column="125" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="166" column="4" lean-forward="true" selection-start-line="166" selection-start-column="4" selection-end-line="166" selection-end-column="28" />
+            <state relative-caret-position="1011">
+              <caret line="323" column="4" lean-forward="false" selection-start-line="323" selection-start-column="4" selection-end-line="323" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -116,6 +116,8 @@
       <find>big-parts-</find>
       <find>form-left</find>
       <find>add_button</find>
+      <find>Light</find>
+      <find>input-f</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Fontys\HBO-ICT\Semester 3\Vrij project\CVGen</dir>
@@ -135,8 +137,8 @@
         <option value="$PROJECT_DIR$/jspdf.debug.js" />
         <option value="$PROJECT_DIR$/jQuery.js" />
         <option value="$PROJECT_DIR$/js/templates_base64/template1.js" />
-        <option value="$PROJECT_DIR$/style.css" />
         <option value="$PROJECT_DIR$/maak.html" />
+        <option value="$PROJECT_DIR$/style.css" />
       </list>
     </option>
   </component>
@@ -153,7 +155,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="66" />
     <option name="y" value="229" />
     <option name="width" value="1793" />
@@ -264,15 +266,15 @@
       <workItem from="1545386223454" duration="2404000" />
       <workItem from="1545554049102" duration="12419000" />
       <workItem from="1545995875246" duration="2656000" />
-      <workItem from="1546161473344" duration="3791000" />
+      <workItem from="1546161473344" duration="4886000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57833000" />
+    <option name="totallyTimeSpent" value="58928000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21302083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -691,18 +693,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/style.css">
+    <entry file="file://$PROJECT_DIR$/maak.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="166" column="4" lean-forward="true" selection-start-line="166" selection-start-column="4" selection-end-line="166" selection-end-column="28" />
+        <state relative-caret-position="633">
+          <caret line="95" column="125" lean-forward="false" selection-start-line="95" selection-start-column="125" selection-end-line="95" selection-end-column="125" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/maak.html">
+    <entry file="file://$PROJECT_DIR$/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="95" column="126" lean-forward="false" selection-start-line="95" selection-start-column="126" selection-end-line="95" selection-end-column="126" />
+        <state relative-caret-position="1011">
+          <caret line="323" column="4" lean-forward="false" selection-start-line="323" selection-start-column="4" selection-end-line="323" selection-end-column="4" />
           <folding />
         </state>
       </provider>
