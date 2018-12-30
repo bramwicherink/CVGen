@@ -76,15 +76,15 @@
 
 
         $(document).ready(function() {
-            var max_fields      = 5; // Maximaal aantal toegestane velden
+            var maximale_velden      = 5; // Maximaal aantal toegestane velden
             var wrapper   		= $(".input_fields_wrap");
-            var add_button      = $(".add_field_button");
+            var knop_toevoegen      = $(".add_field_button");
 
-            var x = 1; //initlal text box count
-            $(add_button).click(function(e){ //on add input button click
+            var x = 1; // Bijhouden  van het aantal velden
+            $(knop_toevoegen).click(function(e){ // Wanneer er op de button 'Toevoegen' geklikt wordt.
                 e.preventDefault();
-                if(x < max_fields){ //max input box allowed
-                    x++; //text box increment
+                if(x < maximale_velden){ // Maximale toegestane velden
+                    x++; // Toevoegen van de tekstvelden
                     $(wrapper).append('<div><br><br>' +
                         '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
                         '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
@@ -93,7 +93,7 @@
                         '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
                         '                        <a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
                 }
-                $(wrapper).on("click",".remove_field", function(e){ //user click on remove text
+                $(wrapper).on("click",".remove_field", function(e){ // Wanneer er op verwijderen van opleiding wordt geklikt. 
                     e.preventDefault(); $(this).parent('div').remove(); x--;
                 })
             });

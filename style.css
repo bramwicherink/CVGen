@@ -176,15 +176,14 @@ p {
     display: flex;
 }
 .form-left {
-    position: relative;
-    left: 0%;
-    width:50%;
+
+    width:500px;
     float:left;
     background-color: #E1870D;
-    flex-direction:column;
+
 }
 .form-right {
-    width:50%;
+    flex: 1;
     background-color: #1E2148;
     float:right;
 }
@@ -228,11 +227,12 @@ p {
 
 
 #part-1 {
-    width: 70%;
-    height: 90%;
+    width: 80%;
+    height: 60%;
     text-align: center;
     margin: 20px;
     padding: 20px;
+    float:left;
 
 
 
@@ -338,7 +338,7 @@ p {
     outline-style: none;
     border: 0;
     margin: 20px;
-    padding: 6px;
+    padding: 12px;
     color: #FFFFFF;
     font-family: 'Montserrat ExtraBold', sans-serif;
     font-size: 15px;
