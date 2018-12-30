@@ -34,23 +34,24 @@
 
     <div class="big-parts-container">
 
+
         <div class="part-of-banner" id="part-1">
             <h1>Invullen</h1>
 
-        <div class="form-left">
-            <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam"><br>
-            <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" /><br>
-            <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adresgegevens (Adres, Postcode + Woonplaats)" /><br>
-            <input class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer"/><br>
-            <input class="input-field" type="text" id="email"  value="" placeholder="E-mailadres"/><br>
+            <div class="form-left">
+                <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam"><br>
+                <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" /><br>
+                <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adresgegevens (Adres, Postcode + Woonplaats)" /><br>
+                <input class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer"/><br>
+                <input class="input-field" type="text" id="email"  value="" placeholder="E-mailadres"/><br>
             </div>
-            <div class="form-right">                
-            <input class="input-field" type="text" id="geboortedatum" onfocus="(this.type='date')" value="" placeholder="Geboortedatum"/><br>
-            <input class="input-field" type="text" id="geboorteplaats" value="" placeholder="Geboorteplaats"/><br>
+            <div class="form-right">
+                <input class="input-field" type="text" id="geboortedatum" onfocus="(this.type='date')" value="" placeholder="Geboortedatum"/><br>
+                <input class="input-field" type="text" id="geboorteplaats" value="" placeholder="Geboorteplaats"/><br>
 
-            <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit"/>
-                </div>
-            <!-- <input type="button" id="button" value="Maak mijn CV!"/> -->
+                <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit"/>
+            </div>
+
 
 
 
@@ -58,126 +59,90 @@
         </div>
 
         <div class="part-of-banner" id="part-2" style="display:none;">
-        <h1>Testje 2</h1>
-                <div class="form-left">
-            <input class="input-field" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>
-        <input class="input-field" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>
-                    </div>
+            <h1>Testje 2</h1>
+            <div class="form-left">
+                <input class="input-field" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>
+                <input class="input-field" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>
+            </div>
 
             <div class="form-right">
-        <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value="" placeholder="Startdatum opleiding" /><br>
-        <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value="" placeholder="Einddatum opleiding"/><br>
-        <input class="input-field" type="text" id="overige_informatie"  value="" placeholder="Overige informatie"/><br>
-                </div>
+                <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value="" placeholder="Startdatum opleiding" /><br>
+                <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value="" placeholder="Einddatum opleiding"/><br>
+                <input class="input-field" type="text" id="overige_informatie"  value="" placeholder="Overige informatie"/><br>
+            </div>
 
             <button class="button add_field_button" id="opleiding_toevoegen" value="Opleiding toevoegen">Opleiding toevoegen</button>
             <button class="button back">Vorige</button>
             <button class="button button-cv-maken">Maak mijn CV!</button>
 
-    </div>
+        </div>
 
-    <script>
+        <script>
+            $(document).ready(function() {
+                let max_fields      = 5; // Maximaal aantal toegestane velden
+                let wrapper   		= $(".input_fields_wrap");
+                let add_button      = $(".add_field_button");
 
-
-        $(document).ready(function() {
-            var maximale_velden      = 5; // Maximaal aantal toegestane velden
-            var wrapper   		= $(".input_fields_wrap");
-            var knop_toevoegen      = $(".add_field_button");
-
-            var x = 1; // Bijhouden  van het aantal velden
-            $(knop_toevoegen).click(function(e){ // Wanneer er op de button 'Toevoegen' geklikt wordt.
-                e.preventDefault();
-                if(x < maximale_velden){ // Maximale toegestane velden
-                    x++; // Toevoegen van de tekstvelden
-                    $(wrapper).append('<div><br><br>' +
-                        '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="startdatum" value="" placeholder="Startdatum" /><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
-                        '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
-                        '                        <a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
-                }
-                $(wrapper).on("click",".remove_field", function(e){ // Wanneer er op verwijderen van opleiding wordt geklikt.
-                    e.preventDefault(); $(this).parent('div').remove(); x--;
-                })
-            });
-
-            $('.button-cv-maken').click(function() {
-
-                let doc = new jsPDF();
-                doc.addImage(imgData, 'JPEG',0,0,210,297);
-                doc.setTextColor(0.7544, 0.4035, 0.0000, 0.5529);
-
-
-                let voornaam = $('#voornaam').val();
-                let achternaam = $('#achternaam').val();
-                let adresgegevens = $('#adresgegevens').val();
-                let telefoon = $('#telefoon').val();
-                let email = $('#email').val();
-                let geboortedatum = $('#geboortedatum').val();
-                let geboorteplaats = $('#geboorteplaats').val();
-                let nationaliteit = $('#nationaliteit').val();
-
-                let naamOpleiding = $('#naam_opleiding').val();
-                let naamInstituut = $('#naam_instituut').val();
-                let startdatum = $('#startdatum').val();
-                let einddatum = $('#einddatum').val();
-                let overigeInformatie = $('#overige_informatie').val();
-
-
-
-
-
-
-                doc.text(40, 27, voornaam);
-                doc.setFontSize(10);
-
-
-                doc.text(40, 32, achternaam);
-                doc.text(40, 37, adresgegevens);
-                doc.text(40, 42, telefoon);
-                doc.text(40, 47, email);
-                doc.text(40, 52, geboortedatum);
-                doc.text(40, 57, geboorteplaats);
-                doc.text(40, 67, nationaliteit);
-
-
-                doc.setFontSize(25);
-                doc.text(110, 27, naamOpleiding);
-
-                doc.setFontSize(10);
-                doc.text(110, 32, naamInstituut);
-                doc.text(110, 37, startdatum);
-                doc.text(110, 42, einddatum);
-                doc.text(110, 47, overigeInformatie);
-
-
-
-
-
-
-
-                doc.save('CV ' + voornaam + '' + achternaam + '.pdf');
-
-
-
+                let x = 1; //initlal text box count
+                $(add_button).click(function(e){ //on add input button click
+                    e.preventDefault();
+                    if(x < max_fields){ //max input box allowed
+                        x++; //text box increment
+                        $(wrapper).append('<div><br><br>' +
+                            '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
+                            '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
+                            '                        <input class="input-field" name="mytext[]" type="text" id="startdatum" value="" placeholder="Startdatum" /><br>\n' +
+                            '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
+                            '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
+                            '                        <select class="input-field" name="voltooid mytext[]">\n' +
+                            '                            <option value="voltooid">Voltooid</option>\n' +
+                            '                            <option value="nietvoltooid">Niet voltooid</option>\n' +
+                            '                        </select><a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
+                    }
+                });
 
 
             });
-
-
-        });
-
-
-
-
-        $('#button').click(function() {
-
+                $('.button-cv-maken').click(function() {
+                    let doc = new jsPDF();
+                    doc.addImage(imgData, 'JPEG',0,0,210,297);
+                    doc.setTextColor(0.7544, 0.4035, 0.0000, 0.5529);
+                    let voornaam = $('#voornaam').val();
+                    let achternaam = $('#achternaam').val();
+                    let adresgegevens = $('#adresgegevens').val();
+                    let telefoon = $('#telefoon').val();
+                    let email = $('#email').val();
+                    let geboortedatum = $('#geboortedatum').val();
+                    let geboorteplaats = $('#geboorteplaats').val();
+                    let nationaliteit = $('#nationaliteit').val();
+                    let naamOpleiding = $('#naam_opleiding').val();
+                    let naamInstituut = $('#naam_instituut').val();
+                    let startdatum = $('#startdatum').val();
+                    let einddatum = $('#einddatum').val();
+                    let overigeInformatie = $('#overige_informatie').val();
+                    doc.text(40, 27, voornaam);
+                    doc.setFontSize(10);
+                    doc.text(40, 32, achternaam);
+                    doc.text(40, 37, adresgegevens);
+                    doc.text(40, 42, telefoon);
+                    doc.text(40, 47, email);
+                    doc.text(40, 52, geboortedatum);
+                    doc.text(40, 57, geboorteplaats);
+                    doc.text(40, 67, nationaliteit);
+                    doc.setFontSize(25);
+                    doc.text(110, 27, naamOpleiding);
+                    doc.setFontSize(10);
+                    doc.text(110, 32, naamInstituut);
+                    doc.text(110, 37, startdatum);
+                    doc.text(110, 42, einddatum);
+                    doc.text(110, 47, overigeInformatie);
+                    doc.save('CV ' + voornaam + '' + achternaam + '.pdf');
+                });
+            });
+            $('#button').click(function() {
                 let doc = new jsPDF();
                 doc.addImage(imgData, 'JPEG', 0, 0, 210, 297);
                 doc.setTextColor(255, 255, 255);
-
-
                 let voornaam = $('#voornaam').val();
                 let achternaam = $('#achternaam').val();
                 let adresgegevens = $('#adresgegevens').val();
@@ -186,11 +151,8 @@
                 let geboortedatum = $('#geboortedatum').val();
                 let geboorteplaats = $('#geboorteplaats').val();
                 let nationaliteit = $('#nationaliteit').val();
-
                 doc.text(40, 27, voornaam);
                 doc.setFontSize(10);
-
-
                 doc.text(40, 32, achternaam);
                 doc.text(40, 37, adresgegevens);
                 doc.text(40, 42, telefoon);
@@ -198,32 +160,17 @@
                 doc.text(40, 52, geboortedatum);
                 doc.text(40, 57, geboorteplaats);
                 doc.text(40, 67, nationaliteit);
-
-
                 doc.save('test.pdf');
-
-
             });
-
-
-
-
-
-
         </script>
     </div>
 
 
 
     <script>
-
-
-
         $('.next').click(function(){
-
             $(this).parent().hide().next().show();//hide parent and show next
         });
-
         $('.back').click(function(){
             $(this).parent().hide().prev().show();//hide parent and show previous
         });
