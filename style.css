@@ -33,7 +33,7 @@ p {
     display: flex;
     float: right;
     flex-direction: column;
-    background-image: url("img/background5-cvmaker.jpg");
+    background-image: url("img/background1-cvmaker.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -302,7 +302,7 @@ p {
     display: flex;
     float: right;
     flex-direction: column;
-    background-color: #171A3D;
+    background-image: url("img/background1-cvmaker.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
