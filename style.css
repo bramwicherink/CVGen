@@ -176,6 +176,8 @@ p {
     display: flex;
 }
 .form-left {
+    position: relative;
+    left: 0%;
     width:50%;
     float:left;
     background-color: #E1870D;
@@ -294,7 +296,7 @@ p {
     display: flex;
     float: right;
     flex-direction: column;
-    background-color: #E1870D;
+    background-color: #171A3D;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -319,12 +321,7 @@ p {
     height: 15px;
 }
 
-.input-field:focus {
-    border: none;
-    background-color: #1E2148;
-    color: #FFFFFF;
 
-}
 
 .input-field a {
     text-decoration: none;
