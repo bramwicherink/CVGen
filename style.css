@@ -172,8 +172,10 @@ p {
 
 
 }
-.form-container {
+
+.form-container button {
     display: flex;
+    flex-direction: column;
 }
 .form-left {
     display: flex;
@@ -189,7 +191,6 @@ p {
     width: 100%;
     display: flex;
     width: 100%;
-    float: left;
     flex-grow: 1;
     flex-flow: wrap;
 }
@@ -350,17 +351,21 @@ p {
     font-size: 15px;
     width: 25%;
     cursor: pointer;
+    overflow: hidden;
 }
 
-.back {
-    background-color: #E1870D;
-    border-radius: 10px;
-    outline-style: none;
-    border: 0;
-    margin: 20px;
-    padding: 6px;
-    color: #FFFFFF;
-    font-family: 'Montserrat ExtraBold', sans-serif;
-    font-size: 15px;
-    width: 25%;
+.button-container {
+    display: flex;
+    flex-direction: row;
 }
+
+.extra-course {
+    overflow: hidden;
+    padding: 20px;
+}
+
+.extra-course a {
+    text-decoration: none;
+}
+
+

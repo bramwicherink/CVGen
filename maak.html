@@ -77,15 +77,18 @@
                            placeholder="Overige informatie"/><br>
                 </div>
 
+
                 <button class="button add_field_button" id="opleiding_toevoegen" value="Opleiding toevoegen">Opleiding
                     toevoegen
                 </button>
-                <button class="button back">Vorige</button>
-                <button class="button button-cv-maken">Maak mijn CV!</button>
+                <button class="button back" value="Vorige">Vorige</button>
+                <button class="button button-cv-maken" value="CV maken">Maak mijn CV!</button>
+
 
             </div>
 
             <script>
+
 
                 $(document).ready(function () {
                     var max_fields = 5; // Maximaal aantal toegestane velden
@@ -97,7 +100,7 @@
                         e.preventDefault();
                         if (x < max_fields) { //max input box allowed
                             x++; //text box increment
-                            $(wrapper).append('<div><br><br>' +
+                            $(wrapper).append('<div class="extra-course"><br><br>' +
                                 '<div class="form-left">' +
                                 '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
                                 '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
@@ -107,15 +110,23 @@
                                 '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
                                 '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
                                 '</div>' +
-                                '                        </select><a href="#" class="remove_field">Verwijder opleiding</a></div>'); // Laat de knop om te verwijderen zien
+                                '                        </select><a href="#" class=" button remove_field">Verwijder opleiding</a></div>'); // Laat de knop om te verwijderen zien
+
+
                         }
+
+                        $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
+                            e.preventDefault();
+                            $(this).parent('div').remove();
+                            x--;
+                        });
 
                         $('.back').hide();
                     });
 
 
                 });
-            </script>
+
                 $('.button-cv-maken').click(function() {
                     let doc = new jsPDF();
                     doc.addImage(imgData, 'JPEG',0,0,210,297);
@@ -133,6 +144,7 @@
                     let startdatum = $('#startdatum').val();
                     let einddatum = $('#einddatum').val();
                     let overigeInformatie = $('#overige_informatie').val();
+
                     doc.text(40, 27, voornaam);
                     doc.setFontSize(10);
                     doc.text(40, 32, achternaam);
@@ -142,6 +154,7 @@
                     doc.text(40, 52, geboortedatum);
                     doc.text(40, 57, geboorteplaats);
                     doc.text(40, 67, nationaliteit);
+
                     doc.setFontSize(25);
                     doc.text(110, 27, naamOpleiding);
                     doc.setFontSize(10);
@@ -150,8 +163,8 @@
                     doc.text(110, 42, einddatum);
                     doc.text(110, 47, overigeInformatie);
                     doc.save('CV ' + voornaam + '' + achternaam + '.pdf');
+
                 });
-            });
             $('#button').click(function() {
                 let doc = new jsPDF();
                 doc.addImage(imgData, 'JPEG', 0, 0, 210, 297);
@@ -188,6 +201,16 @@
             $(this).parent().hide().prev().show();//hide parent and show previous
         });
     </script>
+
+        <script>
+            if ($('.input-field').val()) {
+                alert("Hallo! Er is een value");
+            }
+
+            else {
+                document.getElementsByClassName('input-field').style.borderColor = "red";
+            }
+        </script>
 
 
 
