@@ -54,57 +54,66 @@
             </div>
 
 
-
-
             <button class="button next">Volgende</button>
         </div>
 
 
         <div class="part-of-banner" id="part-2" style="display:none;">
-            <h1>Opleidingen</h1>
-            <div class="form-left">
-                <input class="input-field" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>
-                <input class="input-field" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>
+            <div class="input_fields_wrap">
+                <h1>Opleidingen</h1>
+                <div class="form-left">
+                    <input class="input-field" type="text" id="naam_opleiding" value=""
+                           placeholder="Naam opleiding"><br>
+                    <input class="input-field" type="text" id="naam_instituut" value=""
+                           placeholder="Naam instituut"/><br>
+                </div>
+
+                <div class="form-right">
+                    <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value=""
+                           placeholder="Startdatum opleiding"/><br>
+                    <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value=""
+                           placeholder="Einddatum opleiding"/><br>
+                    <input class="input-field" type="text" id="overige_informatie" value=""
+                           placeholder="Overige informatie"/><br>
+                </div>
+
+                <button class="button add_field_button" id="opleiding_toevoegen" value="Opleiding toevoegen">Opleiding
+                    toevoegen
+                </button>
+                <button class="button back">Vorige</button>
+                <button class="button button-cv-maken">Maak mijn CV!</button>
+
             </div>
 
-            <div class="form-right">
-                <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value="" placeholder="Startdatum opleiding" /><br>
-                <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value="" placeholder="Einddatum opleiding"/><br>
-                <input class="input-field" type="text" id="overige_informatie"  value="" placeholder="Overige informatie"/><br>
-            </div>
+            <script>
 
-            <button class="button add_field_button" id="opleiding_toevoegen" value="Opleiding toevoegen">Opleiding toevoegen</button>
-            <button class="button back">Vorige</button>
-            <button class="button button-cv-maken">Maak mijn CV!</button>
+                $(document).ready(function () {
+                    var max_fields = 5; // Maximaal aantal toegestane velden
+                    var wrapper = $(".input_fields_wrap");
+                    var add_button = $(".add_field_button");
 
-        </div>
+                    var x = 1; //initlal text box count
+                    $(add_button).click(function (e) { //on add input button click
+                        e.preventDefault();
+                        if (x < max_fields) { //max input box allowed
+                            x++; //text box increment
+                            $(wrapper).append('<div><br><br>' +
+                                '<div class="form-left">' +
+                                '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
+                                '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
+                                '</div>' +
+                                '<div class="form-right">' +
+                                '                        <input class="input-field" name="mytext[]" type="text" id="startdatum" value="" placeholder="Startdatum" /><br>\n' +
+                                '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
+                                '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
+                                '</div>' +
+                                '                        </select><a href="#" class="remove_field">Verwijder opleiding</a></div>'); // Laat de knop om te verwijderen zien
+                        }
+                    });
 
-        <script>
-            $(document).ready(function() {
-                let max_fields      = 5; // Maximaal aantal toegestane velden
-                let wrapper   		= $(".input_fields_wrap");
-                let add_button      = $(".add_field_button");
 
-                let x = 1; //initlal text box count
-                $(add_button).click(function(e){ //on add input button click
-                    e.preventDefault();
-                    if(x < max_fields){ //max input box allowed
-                        x++; //text box increment
-                        $(wrapper).append('<div><br><br>' +
-                            '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
-                            '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
-                            '                        <input class="input-field" name="mytext[]" type="text" id="startdatum" value="" placeholder="Startdatum" /><br>\n' +
-                            '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
-                            '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
-                            '                        <select class="input-field" name="voltooid mytext[]">\n' +
-                            '                            <option value="voltooid">Voltooid</option>\n' +
-                            '                            <option value="nietvoltooid">Niet voltooid</option>\n' +
-                            '                        </select><a href="#" class="remove_field">Verwijder opleiding</a></div>'); //add input box
-                    }
                 });
-
-
-            });
+            </script>
                 $('.button-cv-maken').click(function() {
                     let doc = new jsPDF();
                     doc.addImage(imgData, 'JPEG',0,0,210,297);
