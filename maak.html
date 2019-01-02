@@ -82,50 +82,37 @@
                     toevoegen
                 </button>
                 <button class="button back" value="Vorige">Vorige</button>
+                <button class="button next">Volgende</button>
                 <button class="button button-cv-maken" value="CV maken">Maak mijn CV!</button>
 
+
+            </div>
+
+
+            <div class="part-of-banner" id="part-3" style="display:none;">
+                <h1>Werkervaring & vrijwilligerswerk</h1>
+                <div class="form-left">
+                    <input class="input-field" type="text" id="naam_opleiding" value=""
+                           placeholder="Naam opleiding"><br>
+                    <input class="input-field" type="text" id="naam_instituut" value=""
+                           placeholder="Naam instituut"/><br>
+                </div>
+
+                <div class="form-right">
+                    <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value=""
+                           placeholder="Startdatum opleiding"/><br>
+                    <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value=""
+                           placeholder="Einddatum opleiding"/><br>
+                    <input class="input-field" type="text" id="overige_informatie" value=""
+                           placeholder="Overige informatie"/><br>
+                </div>
 
             </div>
 
             <script>
 
 
-                $(document).ready(function () {
-                    var max_fields = 5; // Maximaal aantal toegestane velden
-                    var wrapper = $(".input_fields_wrap");
-                    var add_button = $(".add_field_button");
 
-                    var x = 1; //initlal text box count
-                    $(add_button).click(function (e) { //on add input button click
-                        e.preventDefault();
-                        if (x < max_fields) { //max input box allowed
-                            x++; //text box increment
-                            $(wrapper).append('<div class="extra-course"><br><br>' +
-                                '<div class="form-left">' +
-                                '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding" value="" placeholder="Naam opleiding"><br>\n' +
-                                '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut" value="" placeholder="Naam instituut" /><br>\n' +
-                                '</div>' +
-                                '<div class="form-right">' +
-                                '                        <input class="input-field" name="mytext[]" type="text" id="startdatum" value="" placeholder="Startdatum" /><br>\n' +
-                                '                        <input class="input-field" name="mytext[]" type="text" id="einddatum" value="" placeholder="Einddatum"/><br>\n' +
-                                '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie"  placeholder="Overige informatie"/><br>\n' +
-                                '</div>' +
-                                '                        </select><a href="#" class=" button remove_field">Verwijder opleiding</a></div>'); // Laat de knop om te verwijderen zien
-
-
-                        }
-
-                        $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
-                            e.preventDefault();
-                            $(this).parent('div').remove();
-                            x--;
-                        });
-
-                        $('.back').hide();
-                    });
-
-
-                });
 
                 $('.button-cv-maken').click(function() {
                     let doc = new jsPDF();
