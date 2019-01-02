@@ -45,6 +45,7 @@ $(document).ready(function () {
             e.preventDefault();
             $(this).parent('div').remove();
             x--;
+            extra_id--;
         });
 
         $('.back').hide();
@@ -52,8 +53,7 @@ $(document).ready(function () {
     });
     let remove_button = $(".extra-course");
 
-    if ($(extra_course).click) {
-        extra_id--;
+    if ($(remove_button).click) {
         alert(extra_id);
     }
 
