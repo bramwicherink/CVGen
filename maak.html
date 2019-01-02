@@ -89,25 +89,7 @@
             </div>
 
 
-            <div class="part-of-banner" id="part-3" style="display:none;">
-                <h1>Werkervaring & vrijwilligerswerk</h1>
-                <div class="form-left">
-                    <input class="input-field" type="text" id="naam_opleiding" value=""
-                           placeholder="Naam opleiding"><br>
-                    <input class="input-field" type="text" id="naam_instituut" value=""
-                           placeholder="Naam instituut"/><br>
-                </div>
 
-                <div class="form-right">
-                    <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value=""
-                           placeholder="Startdatum opleiding"/><br>
-                    <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value=""
-                           placeholder="Einddatum opleiding"/><br>
-                    <input class="input-field" type="text" id="overige_informatie" value=""
-                           placeholder="Overige informatie"/><br>
-                </div>
-
-            </div>
 
             <script>
 
@@ -132,6 +114,14 @@
                     let einddatum = $('#einddatum').val();
                     let overigeInformatie = $('#overige_informatie').val();
 
+                    let naamOpleiding2 = $('#naam_opleiding2').val();
+                    let naamInstituut2 = $('#naam_instituut2').val();
+                    let startdatum2 = $('#startdatum2').val();
+                    let einddatum2 = $('#einddatum2').val();
+                    let overigeInformatie2 = $('#overige_informatie2').val();
+
+
+
                     doc.text(40, 27, voornaam);
                     doc.setFontSize(10);
                     doc.text(40, 32, achternaam);
@@ -149,6 +139,14 @@
                     doc.text(110, 37, startdatum);
                     doc.text(110, 42, einddatum);
                     doc.text(110, 47, overigeInformatie);
+
+                    doc.setFontSize(25);
+                    doc.text(110, 60, naamOpleiding2);
+                    doc.setFontSize(10);
+                    doc.text(110, 65, naamInstituut2);
+                    doc.text(110, 70, startdatum2);
+                    doc.text(110, 75, einddatum2);
+                    doc.text(110, 80, overigeInformatie2);
                     doc.save('CV ' + voornaam + '' + achternaam + '.pdf');
 
                 });
