@@ -12,11 +12,11 @@ $(document).ready(function () {
         alert(extra_id);
 
 
-       /* if ($(add_button).click) {
-            for (extra_id = 0; extra_id < max_fields; extra_id++) {
-                $("#startdatum").attr("id", "startdatum" + extra_id);
-            }
-        } */
+        /* if ($(add_button).click) {
+             for (extra_id = 0; extra_id < max_fields; extra_id++) {
+                 $("#startdatum").attr("id", "startdatum" + extra_id);
+             }
+         } */
 
 
 
@@ -59,6 +59,3 @@ $(document).ready(function () {
 
 
 });
-
-
-
