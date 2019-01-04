@@ -72,12 +72,17 @@
                     <input class="input-field" type="text" id="startdatum" onfocus="(this.type='date')" value=""
                            placeholder="Startdatum opleiding"/><br>
                     <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value=""
-                           placeholder="Einddatum opleiding"/><br>
+                           placeholder="(Verwachte) einddatum opleiding"/><br>
                     <input class="input-field" type="text" id="overige_informatie" value=""
                            placeholder="Overige informatie"/><br>
                 </div>
 
 
+
+
+            </div>
+
+            <div class="button-container">
                 <button class="button add_field_button" id="opleiding_toevoegen" value="Opleiding toevoegen">Opleiding
                     toevoegen
                 </button>
@@ -85,6 +90,7 @@
                 <button class="button next">Volgende</button>
                 <button class="button button-cv-maken" value="CV maken">Maak mijn CV!</button>
 
+            </div>
 
             </div>
 
@@ -96,60 +102,6 @@
 
 
 
-                $('.button-cv-maken').click(function() {
-                    let doc = new jsPDF();
-                    doc.addImage(imgData, 'JPEG',0,0,210,297);
-                    doc.setTextColor(0.7544, 0.4035, 0.0000, 0.5529);
-                    let voornaam = $('#voornaam').val();
-                    let achternaam = $('#achternaam').val();
-                    let adresgegevens = $('#adresgegevens').val();
-                    let telefoon = $('#telefoon').val();
-                    let email = $('#email').val();
-                    let geboortedatum = $('#geboortedatum').val();
-                    let geboorteplaats = $('#geboorteplaats').val();
-                    let nationaliteit = $('#nationaliteit').val();
-                    let naamOpleiding = $('#naam_opleiding').val();
-                    let naamInstituut = $('#naam_instituut').val();
-                    let startdatum = $('#startdatum').val();
-                    let einddatum = $('#einddatum').val();
-                    let overigeInformatie = $('#overige_informatie').val();
-
-                    let naamOpleiding2 = $('#naam_opleiding2').val();
-                    let naamInstituut2 = $('#naam_instituut2').val();
-                    let startdatum2 = $('#startdatum2').val();
-                    let einddatum2 = $('#einddatum2').val();
-                    let overigeInformatie2 = $('#overige_informatie2').val();
-
-
-
-                    doc.text(40, 27, voornaam);
-                    doc.setFontSize(10);
-                    doc.text(40, 32, achternaam);
-                    doc.text(40, 37, adresgegevens);
-                    doc.text(40, 42, telefoon);
-                    doc.text(40, 47, email);
-                    doc.text(40, 52, geboortedatum);
-                    doc.text(40, 57, geboorteplaats);
-                    doc.text(40, 67, nationaliteit);
-
-                    doc.setFontSize(25);
-                    doc.text(110, 27, naamOpleiding);
-                    doc.setFontSize(10);
-                    doc.text(110, 32, naamInstituut);
-                    doc.text(110, 37, startdatum);
-                    doc.text(110, 42, einddatum);
-                    doc.text(110, 47, overigeInformatie);
-
-                    doc.setFontSize(25);
-                    doc.text(110, 60, naamOpleiding2);
-                    doc.setFontSize(10);
-                    doc.text(110, 65, naamInstituut2);
-                    doc.text(110, 70, startdatum2);
-                    doc.text(110, 75, einddatum2);
-                    doc.text(110, 80, overigeInformatie2);
-                    doc.save('CV ' + voornaam + '' + achternaam + '.pdf');
-
-                });
 
             </script>
     </div>
