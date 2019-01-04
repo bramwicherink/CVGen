@@ -18,13 +18,13 @@ $(document).ready(function () {
 
             $(wrapper).append('<div class="extra-course"><br><br>' +
                 '<div class="form-left">' +
-                '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding' + extra_id + '" value="" placeholder="Naam opleiding"><br>\n' +
-                '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut' + extra_id + '" value="" placeholder="Naam instituut" /><br>\n' +
+                '<input class="input-field" name="mytext[]" type="text" id="naam_opleiding' + extra_id + '" value="" placeholder="Naam opleiding" maxlength="15"><br>\n' +
+                '                        <input class="input-field" name="mytext[]" type="text" id="naam_instituut' + extra_id + '" value="" placeholder="Naam instituut" maxlength="25" /><br>\n' +
                 '</div>' +
                 '<div class="form-right">' +
                 '                        <input class="input-field" name="mytext[]" type="text" id="startdatum' + extra_id + '" value="" placeholder="Startdatum" /><br>\n' +
                 '                        <input class="input-field" name="mytext[]" type="text" id="einddatum' + extra_id + '" value="" placeholder="Einddatum"/><br>\n' +
-                '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie' + extra_id + '"  placeholder="Overige informatie"/><br>\n' +
+                '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie' + extra_id + '"  placeholder="Overige informatie" maxlength="30"/><br>\n' +
                 '</div>' +
                 '                        </select><a href="#" class="button remove_field">Verwijder opleiding</a></div>'); // Laat de knop om te verwijderen zien
 
@@ -101,7 +101,7 @@ $(document).ready(function () {
             doc.text(40, 47, email);
             doc.text(40, 52, geboortedatum);
             doc.text(40, 57, geboorteplaats);
-            doc.text(40, 67, nationaliteit);
+            doc.text(40, 62, nationaliteit);
 
             doc.setFontSize(25);
             doc.text(110, 27, naamOpleiding);

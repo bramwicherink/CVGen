@@ -40,17 +40,17 @@
 
 
             <div class="form-left">
-                <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam"><br>
-                <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" /><br>
-                <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adresgegevens (Adres, Postcode + Woonplaats)" /><br>
-                <input class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer"/><br>
-                <input class="input-field" type="text" id="email"  value="" placeholder="E-mailadres"/><br>
+                <input class="input-field" type="text" id="voornaam" value="" placeholder="Voornaam" maxlength="18"><br>
+                <input class="input-field" type="text" id="achternaam" value="" placeholder="Achternaam" maxlength="25" /><br>
+                <input class="input-field" type="text" id="adresgegevens" value="" placeholder="Adresgegevens (Adres, Postcode + Woonplaats)" maxlength="50" /><br>
+                <input class="input-field" type="text" id="telefoon" value="" placeholder="Telefoonnummer" maxlength="14"/><br>
+                <input class="input-field" type="text" id="email"  value="" placeholder="E-mailadres" maxlength="30"/><br>
             </div>
             <div class="form-right">
                 <input class="input-field" type="text" id="geboortedatum" onfocus="(this.type='date')" value="" placeholder="Geboortedatum"/><br>
                 <input class="input-field" type="text" id="geboorteplaats" value="" placeholder="Geboorteplaats"/><br>
 
-                <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit"/>
+                <input class="input-field" type="text" id="nationaliteit"  value="" placeholder="Nationaliteit" maxlength="20"/>
             </div>
 
 
@@ -63,9 +63,9 @@
                 <h1>Opleidingen</h1>
                 <div class="form-left">
                     <input class="input-field" type="text" id="naam_opleiding" value=""
-                           placeholder="Naam opleiding"><br>
+                           placeholder="Naam opleiding" maxlength="15"><br>
                     <input class="input-field" type="text" id="naam_instituut" value=""
-                           placeholder="Naam instituut"/><br>
+                           placeholder="Naam instituut" maxlength="25"/><br>
                 </div>
 
                 <div class="form-right">
@@ -74,7 +74,7 @@
                     <input class="input-field" type="text" id="einddatum" onfocus="(this.type='date')" value=""
                            placeholder="Einddatum opleiding"/><br>
                     <input class="input-field" type="text" id="overige_informatie" value=""
-                           placeholder="Overige informatie"/><br>
+                           placeholder="Overige informatie" maxlength="30"/><br>
                 </div>
 
 
@@ -84,6 +84,8 @@
                 <button class="button back" value="Vorige">Vorige</button>
                 <button class="button next">Volgende</button>
                 <button class="button button-cv-maken" value="CV maken">Maak mijn CV!</button>
+
+
 
 
             </div>
@@ -127,3 +129,4 @@
 
 
     </div> <!-- Einde main-container -->
+</div>

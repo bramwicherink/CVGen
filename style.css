@@ -134,12 +134,9 @@ p {
     padding: 20px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 16px;
     cursor: pointer;
     -webkit-transition: ease-in-out 0.2s;
-    background: linear-gradient(to right, #E1870D 50%, #FF9F1C 50%);
-    background-size: 200% 100%;
     background-position: right bottom;
     transition: all .5s ease-out;
     border-radius: 25px;
@@ -329,6 +326,7 @@ p {
     width: 40%;
     height: 15px;
     flex-grow: 1;
+    -webkit-transition: ease-in-out 0.5s;
 }
 
 
@@ -337,13 +335,20 @@ p {
     text-decoration: none;
 }
 
+
+
+.input-field:focus {
+    background-color: #FFA72F;
+    color: #FFFFFF;
+}
+
 ::placeholder {
     color: #1E2148;
     font-family: 'Montserrat Medium', sans-serif;
 }
 
 .button {
-    background-color: #E1870D;
+    background-color: #FFA72F;
     border-radius: 10px;
     outline-style: none;
     border: 0;
@@ -355,10 +360,18 @@ p {
     width: 25%;
     cursor: pointer;
     overflow: hidden;
+    -webkit-transition: ease-in-out 0.4s;
+
+}
+
+.button:hover {
+    background-color: #E1870D;
+    -webkit-transition: ease-in-out 0.4s;
 }
 
 .button-container {
-    display: flex;
+    position: relative;
+    top:30%;
     flex-direction: row;
 }
 
