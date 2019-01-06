@@ -1579,9 +1579,7 @@
                     }
                     textIsOfTypeString = tmpTextIsOfTypeString;
                 }
-                if (textIsOfTypeString === false) {
-                    throw new Error('Type of text must be string or Array. "' + text + '" is not recognized.');
-                }
+
 
                 //Escaping
                 var activeFontEncoding = fonts[activeFontKey].encoding;

@@ -226,10 +226,7 @@ p {
 
 }
 
-.part-of-banner:hover {
-    transform: scale(1.05);
-    -webkit-transition: ease-in-out 0.2s;
-}
+
 
 
 
@@ -264,7 +261,7 @@ p {
     margin: 20px;
     padding: 20px;
 
-    float: right;
+
 
 }
 
