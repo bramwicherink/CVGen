@@ -374,4 +374,13 @@ p {
     text-decoration: none;
 }
 
+.uitleg-div {
+    -webkit-transition: ease-in-out 0.5s;
+}
+
+.uitleg-div:hover {
+    transform: scale(1.08);
+    -webkit-transition: ease-in-out 0.5s;
+}
+
 
