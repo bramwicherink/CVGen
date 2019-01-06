@@ -15,21 +15,22 @@ $(document).ready(function () {
     $(add_button_ac).click(function (e) {
         e.preventDefault();
         extra_id_ac++;
-        alert(y);
+        alert(extra_id_ac);
 
         if(y < max_fields_ac) {
             y++;
 
 
+
             $(wrapper_ac).append('<div class="extra-course"><br><br>' +
                 '<div class="form-left">' +
-                '<input class="input-field" name="mytext[]" type="text" id="naam_ac' + extra_id_ac + '" value="" placeholder="Naam werkervaring of activiteit" maxlength="15"><br>\n' +
+                '<input class="input-field" name="mytext[]" type="text" id="naam_ac' + extra_id_ac + '" value="" placeholder="Naam werkervaring of activiteit" maxlength="22"><br>\n' +
                 '<input class="input-field" name="mytext[]" type="text" id="naam_instantie_ac' + extra_id_ac + '" value="" placeholder="Naam werkgever of instantie" maxlength="25" /><br>\n' +
                 '</div>' +
                 '<div class="form-right">' +
-                '                        <input class="input-field" name="mytext[]" type="text" id="startdatum_ac' + extra_id + '" value="" placeholder="Startdatum activiteit" /><br>\n' +
-                '                        <input class="input-field" name="mytext[]" type="text" id="einddatum_ac' + extra_id + '" value="" placeholder="Einddatum activiteit"/><br>\n' +
-                '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie_ac' + extra_id + '"  placeholder="Overige informatie" maxlength="30"/><br>\n' +
+                '                        <input class="input-field" name="mytext[]" type="text" id="startdatum_ac' + extra_id_ac + '" value="" placeholder="Startdatum activiteit" /><br>\n' +
+                '                        <input class="input-field" name="mytext[]" type="text" id="einddatum_ac' + extra_id_ac + '" value="" placeholder="Einddatum activiteit"/><br>\n' +
+                '                        <input class="input-field" name="mytext[]" type="text" id="overige_informatie_ac' + extra_id_ac + '"  placeholder="Overige informatie" maxlength="30"/><br>\n' +
                 '</div>' +
                 '                        </select><a href="#" class="button remove_field_ac">Verwijder activiteit</a></div>'); // Laat de knop om te verwijderen zien
 
@@ -265,52 +266,52 @@ $(document).ready(function () {
             doc.text(110, 278, overigeInformatie8);
 
             doc.setFontSize(25);
-            doc.text(40, 93, naamActiviteit);
+            doc.text(5, 93, naamActiviteit);
             doc.setFontSize(10);
-            doc.text(40, 98, naamInstantie);
-            doc.text(40, 103, startdatumActiviteit);
-            doc.text(40, 108, einddatumActiviteit);
-            doc.text(40, 113, overigeInformatieActiviteit);
+            doc.text(5, 98, naamInstantie);
+            doc.text(5, 103, startdatumActiviteit);
+            doc.text(5, 108, einddatumActiviteit);
+            doc.text(5, 113, overigeInformatieActiviteit);
 
             doc.setFontSize(25);
-            doc.text(40, 126, naamActiviteit2);
+            doc.text(5, 126, naamActiviteit2);
             doc.setFontSize(10);
-            doc.text(40, 131, naamInstantie2);
-            doc.text(40, 136, startdatumActiviteit2);
-            doc.text(40, 141, einddatumActiviteit2);
-            doc.text(40, 146, overigeInformatieActiviteit2);
+            doc.text(5, 131, naamInstantie2);
+            doc.text(5, 136, startdatumActiviteit2);
+            doc.text(5, 141, einddatumActiviteit2);
+            doc.text(5, 146, overigeInformatieActiviteit2);
 
             doc.setFontSize(25);
-            doc.text(40, 159, naamActiviteit3);
+            doc.text(5, 159, naamActiviteit3);
             doc.setFontSize(10);
-            doc.text(40, 164, naamInstantie3);
-            doc.text(40, 169, startdatumActiviteit3);
-            doc.text(40, 174, einddatumActiviteit3);
-            doc.text(40, 179, overigeInformatieActiviteit3);
+            doc.text(5, 164, naamInstantie3);
+            doc.text(5, 169, startdatumActiviteit3);
+            doc.text(5, 174, einddatumActiviteit3);
+            doc.text(5, 179, overigeInformatieActiviteit3);
 
             doc.setFontSize(25);
-            doc.text(40, 192, naamActiviteit4);
+            doc.text(5, 192, naamActiviteit4);
             doc.setFontSize(10);
-            doc.text(40, 197, naamInstantie4);
-            doc.text(40, 202, startdatumActiviteit4);
-            doc.text(40, 207, einddatumActiviteit4);
-            doc.text(40, 212, overigeInformatieActiviteit4);
+            doc.text(5, 197, naamInstantie4);
+            doc.text(5, 202, startdatumActiviteit4);
+            doc.text(5, 207, einddatumActiviteit4);
+            doc.text(5, 212, overigeInformatieActiviteit4);
 
             doc.setFontSize(25);
-            doc.text(40, 225, naamActiviteit5);
+            doc.text(5, 225, naamActiviteit5);
             doc.setFontSize(10);
-            doc.text(40, 230, naamInstantie5);
-            doc.text(40, 235, startdatumActiviteit5);
-            doc.text(40, 240, einddatumActiviteit5);
-            doc.text(40, 245, overigeInformatieActiviteit5);
+            doc.text(5, 230, naamInstantie5);
+            doc.text(5, 235, startdatumActiviteit5);
+            doc.text(5, 240, einddatumActiviteit5);
+            doc.text(5, 245, overigeInformatieActiviteit5);
 
             doc.setFontSize(25);
-            doc.text(40, 258, naamActiviteit6);
+            doc.text(5, 258, naamActiviteit6);
             doc.setFontSize(10);
-            doc.text(40, 263, naamInstantie6);
-            doc.text(40, 268, startdatumActiviteit6);
-            doc.text(40, 273, einddatumActiviteit6);
-            doc.text(40, 278, overigeInformatieActiviteit6);
+            doc.text(5, 263, naamInstantie6);
+            doc.text(5, 268, startdatumActiviteit6);
+            doc.text(5, 273, einddatumActiviteit6);
+            doc.text(5, 278, overigeInformatieActiviteit6);
 
 
 
