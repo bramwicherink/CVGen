@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/jQuery.js" line="293" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="3c60b835-6f23-484a-8af0-d764f4675010" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
       <change beforePath="$PROJECT_DIR$/jQuery.js" afterPath="$PROJECT_DIR$/jQuery.js" />
-      <change beforePath="$PROJECT_DIR$/jspdf.debug.js" afterPath="$PROJECT_DIR$/jspdf.debug.js" />
       <change beforePath="$PROJECT_DIR$/maak.html" afterPath="$PROJECT_DIR$/maak.html" />
-      <change beforePath="$PROJECT_DIR$/style.css" afterPath="$PROJECT_DIR$/style.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,21 +28,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jQuery.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="jQuery.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jQuery.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+            <state relative-caret-position="378">
+              <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="maak.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="maak.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/maak.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="559">
-              <caret line="91" column="90" lean-forward="false" selection-start-line="91" selection-start-column="90" selection-end-line="91" selection-end-column="90" />
+            <state relative-caret-position="289">
+              <caret line="96" column="48" lean-forward="false" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -85,7 +85,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>big-parts-</find>
       <find>form-left</find>
       <find>add_button</find>
       <find>Light</find>
@@ -115,6 +114,7 @@
       <find>part-3</find>
       <find>||</find>
       <find>.hide</find>
+      <find>input_fields</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Fontys\HBO-ICT\Semester 3\Vrij project\CVGen</dir>
@@ -158,7 +158,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="66" />
     <option name="y" value="229" />
     <option name="width" value="1793" />
@@ -279,7 +279,7 @@
       <workItem from="1546586093565" duration="4070000" />
       <workItem from="1546592133890" duration="13881000" />
       <workItem from="1546607394666" duration="8486000" />
-      <workItem from="1546772998437" duration="1511000" />
+      <workItem from="1546772998437" duration="4731000" />
     </task>
     <task id="LOCAL-00001" summary="Changed &lt;H1&gt; from 'Invullen' to 'Personalia' to get it more detailed.">
       <created>1546194481463</created>
@@ -327,10 +327,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130657000" />
+    <option name="totallyTimeSpent" value="133877000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="-9" width="1938" height="1048" extended-state="7" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21302083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -765,22 +765,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jQuery.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/maak.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="91" column="90" lean-forward="false" selection-start-line="91" selection-start-column="90" selection-end-line="91" selection-end-column="90" />
+        <state relative-caret-position="289">
+          <caret line="96" column="48" lean-forward="false" selection-start-line="96" selection-start-column="48" selection-end-line="96" selection-end-column="48" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jQuery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="23" column="24" lean-forward="false" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

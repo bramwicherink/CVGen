@@ -2,6 +2,7 @@ $(document).ready(function () {
     let max_fields = 8; // Maximaal aantal toegestane velden
     let max_fields_ac = 6;
     let wrapper = $(".input_fields_wrap");
+    let wrapper_ac = $(".input_fields_wrap_ac");
     let add_button = $(".add_field_button");
     let add_button_ac = $(".add_field_button_ac");
 
@@ -14,11 +15,13 @@ $(document).ready(function () {
     $(add_button_ac).click(function (e) {
         e.preventDefault();
         extra_id_ac++;
+        alert(y);
 
         if(y < max_fields_ac) {
             y++;
 
-            $(wrapper).append('<div class="extra-course"><br><br>' +
+
+            $(wrapper_ac).append('<div class="extra-course"><br><br>' +
                 '<div class="form-left">' +
                 '<input class="input-field" name="mytext[]" type="text" id="naam_ac' + extra_id_ac + '" value="" placeholder="Naam werkervaring of activiteit" maxlength="15"><br>\n' +
                 '<input class="input-field" name="mytext[]" type="text" id="naam_instantie_ac' + extra_id_ac + '" value="" placeholder="Naam werkgever of instantie" maxlength="25" /><br>\n' +
@@ -148,6 +151,42 @@ $(document).ready(function () {
         let einddatum8 = $('#einddatum8').val();
         let overigeInformatie8 = $('#overige_informatie8').val();
 
+        let naamActiviteit = $('#naam_ac').val();
+        let naamInstantie = $('#naam_instantie_ac').val();
+        let startdatumActiviteit = $('#startdatum_ac').val();
+        let einddatumActiviteit = $('#einddatum_ac').val();
+        let overigeInformatieActiviteit = $('#overige_informatie_ac').val();
+
+        let naamActiviteit2 = $('#naam_ac2').val();
+        let naamInstantie2 = $('#naam_instantie_ac2').val();
+        let startdatumActiviteit2 = $('#startdatum_ac2').val();
+        let einddatumActiviteit2 = $('#einddatum_ac2').val();
+        let overigeInformatieActiviteit2 = $('#overige_informatie_ac2').val();
+
+        let naamActiviteit3 = $('#naam_ac3').val();
+        let naamInstantie3 = $('#naam_instantie_ac3').val();
+        let startdatumActiviteit3 = $('#startdatum_ac3').val();
+        let einddatumActiviteit3 = $('#einddatum_ac3').val();
+        let overigeInformatieActiviteit3 = $('#overige_informatie_ac3').val();
+
+        let naamActiviteit4 = $('#naam_ac4').val();
+        let naamInstantie4 = $('#naam_instantie_ac4').val();
+        let startdatumActiviteit4 = $('#startdatum_ac4').val();
+        let einddatumActiviteit4 = $('#einddatum_ac4').val();
+        let overigeInformatieActiviteit4 = $('#overige_informatie_ac4').val();
+
+        let naamActiviteit5 = $('#naam_ac5').val();
+        let naamInstantie5 = $('#naam_instantie_ac5').val();
+        let startdatumActiviteit5 = $('#startdatum_ac5').val();
+        let einddatumActiviteit5 = $('#einddatum_ac5').val();
+        let overigeInformatieActiviteit5 = $('#overige_informatie_ac5').val();
+
+        let naamActiviteit6 = $('#naam_ac6').val();
+        let naamInstantie6 = $('#naam_instantie_ac6').val();
+        let startdatumActiviteit6 = $('#startdatum_ac6').val();
+        let einddatumActiviteit6 = $('#einddatum_ac6').val();
+        let overigeInformatieActiviteit6 = $('#overige_informatie_ac6').val();
+
 
         if (max_fields >= x) {
 
@@ -224,6 +263,59 @@ $(document).ready(function () {
             doc.text(110, 268, startdatum8);
             doc.text(110, 273, einddatum8);
             doc.text(110, 278, overigeInformatie8);
+
+            doc.setFontSize(25);
+            doc.text(40, 93, naamActiviteit);
+            doc.setFontSize(10);
+            doc.text(40, 98, naamInstantie);
+            doc.text(40, 103, startdatumActiviteit);
+            doc.text(40, 108, einddatumActiviteit);
+            doc.text(40, 113, overigeInformatieActiviteit);
+
+            doc.setFontSize(25);
+            doc.text(40, 126, naamActiviteit2);
+            doc.setFontSize(10);
+            doc.text(40, 131, naamInstantie2);
+            doc.text(40, 136, startdatumActiviteit2);
+            doc.text(40, 141, einddatumActiviteit2);
+            doc.text(40, 146, overigeInformatieActiviteit2);
+
+            doc.setFontSize(25);
+            doc.text(40, 159, naamActiviteit3);
+            doc.setFontSize(10);
+            doc.text(40, 164, naamInstantie3);
+            doc.text(40, 169, startdatumActiviteit3);
+            doc.text(40, 174, einddatumActiviteit3);
+            doc.text(40, 179, overigeInformatieActiviteit3);
+
+            doc.setFontSize(25);
+            doc.text(40, 192, naamActiviteit4);
+            doc.setFontSize(10);
+            doc.text(40, 197, naamInstantie4);
+            doc.text(40, 202, startdatumActiviteit4);
+            doc.text(40, 207, einddatumActiviteit4);
+            doc.text(40, 212, overigeInformatieActiviteit4);
+
+            doc.setFontSize(25);
+            doc.text(40, 225, naamActiviteit5);
+            doc.setFontSize(10);
+            doc.text(40, 230, naamInstantie5);
+            doc.text(40, 235, startdatumActiviteit5);
+            doc.text(40, 240, einddatumActiviteit5);
+            doc.text(40, 245, overigeInformatieActiviteit5);
+
+            doc.setFontSize(25);
+            doc.text(40, 258, naamActiviteit6);
+            doc.setFontSize(10);
+            doc.text(40, 263, naamInstantie6);
+            doc.text(40, 268, startdatumActiviteit6);
+            doc.text(40, 273, einddatumActiviteit6);
+            doc.text(40, 278, overigeInformatieActiviteit6);
+
+
+
+
+
 
             doc.save('CV ' + voornaam + '' + achternaam + '.pdf');
         }
