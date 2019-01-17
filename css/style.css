@@ -33,7 +33,7 @@ p {
     display: flex;
     float: right;
     flex-direction: column;
-    background-image: url("img/background2-cvmaker.png");
+    background-image: url("../img/background2-cvmaker.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ p {
     font-size: 40px;
     float: left;
     position: absolute;
-    top: 10%;
+    top: 1.6%;
 
 }
 
@@ -308,7 +308,7 @@ p {
     display: flex;
     float: right;
     flex-direction: column;
-    background-image: url("img/background2-cvmaker.png");
+    background-image: url("../img/background2-cvmaker.png");
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -431,7 +431,7 @@ button {
     vertical-align: center;
     margin-left: auto;
     margin-right: auto;
-    left: 0;
+    left: 0%;
     background-color: #F4473A;
     -webkit-transition: ease-in-out 0.3s;
 }
