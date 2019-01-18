@@ -16,10 +16,24 @@
     <script src="jQuery.js"></script>
 
 </head>
-<body>
+<body onload="load()">
+
+<script>
+    function save() {
+        let fieldValue = document.getElementsByClassName('input-field').value;
+        localStorage.setItem('text', fieldValue);
+    }
+
+    function load() {
+        let storedValue = localStorage.getItem('text');
+        if(storedValue) {
+            document.getElementById('input-field').value = storedValue;
+        }
+    }
+</script>
 <div class="main-container-cvmaken">
     <div class="part-of-banner">
-        <p>Dit is een testversie. Er kunnen nog gegevens wijzigen, verwijderd of toegevoegd worden.</p>
+
     </div>
     <header class="header-container">
         <div class="main-text-logo"><a href="index.html"><p>CVGen.</p></a></div>
@@ -31,8 +45,8 @@
     <div class="big-parts-container">
         <div class="part-of-banner" id="part-1">
             <h3>Personalia</h3>
-            <button class="opslaan-personalia">Local Storage</button>
-            <button class="terughalen-personalia">Terughalen data</button>
+            <input type="button" value="Gegevens opslaan" onclick="save()" class="opslaan"/>
+
 
             <div class="form-total">
                 <div class="form-left">

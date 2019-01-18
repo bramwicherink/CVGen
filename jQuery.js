@@ -11,7 +11,6 @@ function addPersonalia() {
         // console.log("Dit is" + veld.value);
         CV.personalia[veld.id] = veld.value;
     }
-    console.log("functie is uitgevoerd!");
     console.log(CV.personalia);
 }
 
@@ -21,7 +20,10 @@ function addExperience() {
         console.log("Dit is" + veld.value);
     }
 }
+
+
 $(document).ready(function () {
+
     let max_fields = 8; // Maximaal aantal toegestane velden
     let max_fields_ac = 6;
     let wrapper = $(".input_fields_wrap");
@@ -41,18 +43,19 @@ $(document).ready(function () {
 
     let huidigeRijActiviteit = 0;
     let maxRijenActiviteit = 6;
+    // let storedData = JSON.parse(localStorage.getItem("CV.personalia"));
 
+    // $('.opslaan-personalia').click(function()
+    // {
+    //     localStorage.setItem("CV.personalia", JSON.stringify(CV.personalia));
+    //
+    // });
+    //
+    // $('.terughalen-personalia').click(function()
+    // {
+    //     storedData();
+    // });
 
-    $('.opslaan-personalia').click(function()
-    {
-        localStorage.setItem("CV.personalia", JSON.stringify(CV.personalia));
-
-    });
-
-    $('.terughalen-personalia').click(function()
-    {
-        JSON.parse(localStorage.getItem("CV.personalia"));
-    });
 
 
 
@@ -336,6 +339,8 @@ $(document).ready(function () {
         else {
             alert("Maximum aantal opleidingen bereikt");
         }
+
+        
     });
     $('.back').click(function () {
         $(this).parent().hide().prev().show();//hide parent and show previous
