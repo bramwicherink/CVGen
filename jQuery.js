@@ -52,8 +52,8 @@ $(document).ready(function () {
                 startdatum: $('#startdatum').val(),
                 einddatum: $('#einddatum').val(),
                 overigeInformatie: $('#overige_informatie').val(),
-                xPos: 110,
-                yPos: 27
+                xPosO: 110,
+                yPosO: 27
 
             };
 
@@ -88,8 +88,8 @@ $(document).ready(function () {
                 startdatum: $('#startdatum_ac').val(),
                 einddatum: $('#einddatum_ac').val(),
                 overigeInformatie: $('#overige_informatie_ac').val(),
-                xPos: 5,
-                yPos: 93
+                xPosA: 5,
+                yPosA: 93
 
             };
 
@@ -220,9 +220,9 @@ $(document).ready(function () {
 
 
         let i;
-        let xPos = 110;
+        let xPosO = 110;
 
-        let yPos = 27;
+        let yPosO = 27;
 
 
 
@@ -234,28 +234,45 @@ $(document).ready(function () {
             console.log(rij.naamOpleiding[i]);
             console.log(rij.naamOpleiding);
 
-            console.log("De xPos is " + xPos + "en de yPos variabele is: " + yPos);
+            console.log("De xPosO is " + xPosO + "en de yPosO variabele is: " + yPosO);
 
 
-            // x-coördinaat wordt bepaald door xPos, y-coördinaat wordt gedefinieerd door yPos
+            // x-coördinaat wordt bepaald door xPosO, y-coördinaat wordt gedefinieerd door yPosO
             doc.setFontSize(25);
-            doc.text(xPos, yPos, rij.naamOpleiding);
-            yPos = yPos + 5;
+            doc.text(xPosO, yPosO, rij.naamOpleiding);
+            yPosO = yPosO + 5;
 
             doc.setFontSize(10);
-            doc.text(xPos, yPos, rij.naamInstituut);
-            yPos = yPos + 5;
-            doc.text(xPos, yPos, rij.startdatum);
-            yPos = yPos + 5;
-            doc.text(xPos, yPos, rij.einddatum);
-            yPos = yPos + 5;
-            doc.text(xPos, yPos, rij.overigeInformatie);
-            yPos = yPos + 16;
+            doc.text(xPosO, yPosO, rij.naamInstituut);
+            yPosO = yPosO + 5;
+            doc.text(xPosO, yPosO, rij.startdatum);
+            yPosO = yPosO + 5;
+            doc.text(xPosO, yPosO, rij.einddatum);
+            yPosO = yPosO + 5;
+            doc.text(xPosO, yPosO, rij.overigeInformatie);
+            yPosO = yPosO + 16;
 
         }
 
+        xPosW = 5;
+        yPosW = 93;
+
         for (i = 0; i < CV.werkervaring.length; i++) {
             rijW = CV.werkervaring[i];
+
+            doc.setFontSize(25);
+            doc.text(xPosW, yPosW, rijW.naamActiviteit);
+            yPosW = yPosW + 5;
+
+            doc.setFontSize(10);
+            doc.text(xPosW, yPosW, rijW.naamInstantie);
+            yPosW = yPosW + 5;
+            doc.text(xPosW, yPosW, rijW.startdatum);
+            yPosW = yPosW + 5;
+            doc.text(xPosW, yPosW, rijW.einddatum);
+            yPosW = yPosW + 5;
+            doc.text(xPosW, yPosW, rijW.overigeInformatie);
+            yPosW = yPosW + 16;
 
         }
 
