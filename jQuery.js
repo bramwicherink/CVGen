@@ -42,7 +42,17 @@ $(document).ready(function () {
     let huidigeRijActiviteit = 0;
     let maxRijenActiviteit = 6;
 
-    
+
+    $('.opslaan-personalia').click(function()
+    {
+        localStorage.setItem("CV.personalia", JSON.stringify(CV.personalia));
+
+    });
+
+    $('.terughalen-personalia').click(function()
+    {
+        JSON.parse(localStorage.getItem("CV.personalia"));
+    });
 
 
 
