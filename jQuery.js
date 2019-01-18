@@ -340,9 +340,11 @@ $(document).ready(function () {
             alert("Maximum aantal opleidingen bereikt");
         }
 
+        console.log(JSON.stringify(CV.opleidingen));
+
         let myObj_serialized = JSON.stringify(CV.personalia);
         localStorage.setItem("CV.personalia", myObj_serialized);
-        let myObj_deserialized = JSON.parse(localStorage.getItem(CV.personalia));
+        let myObj_deserialized = JSON.parse(localStorage.getItem(myObj_serialized));
         console.log(myObj_deserialized);
     });
     $('.back').click(function () {
