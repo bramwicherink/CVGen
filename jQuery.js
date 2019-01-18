@@ -35,8 +35,11 @@ $(document).ready(function () {
     let extra_id_ac = 1;
 
 
-    let huidigeRij = 0;
-    let maxRijen = 6;
+    let huidigeRijOpleidingen = 0;
+    let maxRijenOpleiding = 7;
+
+    let huidigeRijActiviteit = 0;
+    let maxRijenActiviteit = 6;
 
 
 
@@ -44,7 +47,7 @@ $(document).ready(function () {
 
         // Opleiding array aanmaken
 
-        if (huidigeRij < maxRijen) {
+        if (huidigeRijOpleidingen < maxRijenOpleiding) {
             let opleiding = {
 
                 naamOpleiding: $('#naam_opleiding').val(),
@@ -59,7 +62,7 @@ $(document).ready(function () {
 
             // Voeg de opleiding toe
             CV.opleidingen.push(opleiding);
-            huidigeRij++;
+            huidigeRijOpleidingen++;
 
             toonToegevoegdeOpleiding(opleiding);
             console.log(opleiding);
@@ -80,7 +83,7 @@ $(document).ready(function () {
         console.log("Er wordt geklikt op de button");
         // Werkgever array aanmaken
 
-        if (huidigeRij < maxRijen) {
+        if (huidigeRijActiviteit < maxRijenActiviteit) {
             let activiteit = {
 
                 naamActiviteit: $('#naam_ac').val(),
@@ -95,7 +98,7 @@ $(document).ready(function () {
 
             // Voeg de opleiding toe
             CV.werkervaring.push(activiteit);
-            huidigeRij++;
+            huidigeRijActiviteit++;
 
             toonToegevoegdeActiviteit(activiteit);
             console.log(activiteit);
@@ -186,7 +189,7 @@ $(document).ready(function () {
 
     $('.button-cv-maken').click(function () {
         let doc = new jsPDF();
-        doc.addImage(imgData, "JPEG", 0, 0, 210, 297);
+        doc.addImage(imgData, 'PNG', 0, 0, 210, 297);
         doc.setTextColor(0.7544, 0.4035, 0.0000, 0.5529);
 
 
@@ -210,6 +213,7 @@ $(document).ready(function () {
 
         } else {
             alert("Vul eerst de vereiste velden in!");
+            break;
         }
 
         console.log(rij);
