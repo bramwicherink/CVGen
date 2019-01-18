@@ -12,6 +12,7 @@ function addPersonalia() {
         CV.personalia[veld.id] = veld.value;
     }
     console.log("functie is uitgevoerd!");
+    console.log(CV.personalia);
 }
 
 function addExperience() {
@@ -40,6 +41,8 @@ $(document).ready(function () {
 
     let huidigeRijActiviteit = 0;
     let maxRijenActiviteit = 6;
+
+    
 
 
 
@@ -213,7 +216,6 @@ $(document).ready(function () {
 
         } else {
             alert("Vul eerst de vereiste velden in!");
-            break;
         }
 
         console.log(rij);
@@ -294,6 +296,36 @@ $(document).ready(function () {
 
     $('.next').click(function () {
         $(this).parent().hide().next().show();//hide parent and show next
+        if (huidigeRijOpleidingen < maxRijenOpleiding) {
+            let opleiding = {
+
+                naamOpleiding: $('#naam_opleiding').val(),
+                naamInstituut: $('#naam_instituut').val(),
+                startdatum: $('#startdatum').val(),
+                einddatum: $('#einddatum').val(),
+                overigeInformatie: $('#overige_informatie').val(),
+                xPosO: 110,
+                yPosO: 27
+
+            };
+
+            // Voeg de opleiding toe
+            CV.opleidingen.push(opleiding);
+            huidigeRijOpleidingen++;
+
+            toonToegevoegdeOpleiding(opleiding);
+            console.log(opleiding);
+
+            // Maak opleidingen form leeg, voor de volgende opleiding die opgevoerd kan worden
+            $("#naam_opleiding").val("");
+            $("#naam_instituut").val("");
+            $("#startdatum").val("");
+            $("#einddatum").val("");
+            $("#overige_informatie").val("");
+        }
+        else {
+            alert("Maximum aantal opleidingen bereikt");
+        }
     });
     $('.back').click(function () {
         $(this).parent().hide().prev().show();//hide parent and show previous
