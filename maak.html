@@ -20,7 +20,8 @@
 
     <script>
         function save() {
-            let fieldValue = document.getElementById('voornaam').value;
+            let fieldValue = CV;
+            console.log(fieldValue);
             localStorage.setItem('text', fieldValue);
         }
 
@@ -130,8 +131,7 @@
 
             <div class="button-container">
                 <button class="button add_field_button_ac" id="activiteit_toevoegen" value="Activiteit toevoegen">
-                    Activiteit
-                    toevoegen
+                    Activiteit toevoegen
                 </button>
                 <button class="button button-cv-maken" value="CV maken">Maak mijn CV!</button>
                 <button class="button btn-1 remove_field">Verwijder (laatste) opleiding</button>
