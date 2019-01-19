@@ -8,18 +8,11 @@ function addPersonalia() {
 
     const velden = Array.from(document.getElementsByClassName('part-1'));
     for (const veld of velden) {
-        // console.log("Dit is" + veld.value);
         CV.personalia[veld.id] = veld.value;
     }
-    console.log(CV.personalia);
+
 }
 
-function addExperience() {
-    const velden = Array.from(document.getElementsByClassName('part-2'));
-    for (const veld of velden) {
-        console.log("Dit is" + veld.value);
-    }
-}
 
 
 $(document).ready(function () {
@@ -71,7 +64,7 @@ $(document).ready(function () {
             huidigeRijOpleidingen++;
 
             toonToegevoegdeOpleiding(opleiding);
-            console.log(opleiding);
+
 
             // Maak opleidingen form leeg, voor de volgende opleiding die opgevoerd kan worden
             $("#naam_opleiding").val("");
@@ -86,7 +79,7 @@ $(document).ready(function () {
     });
 
     $('.add_field_button_ac').click(function () {
-        console.log("Er wordt geklikt op de button");
+
         // Werkgever array aanmaken
 
         if (huidigeRijActiviteit < maxRijenActiviteit) {
@@ -107,7 +100,7 @@ $(document).ready(function () {
             huidigeRijActiviteit++;
 
             toonToegevoegdeActiviteit(activiteit);
-            console.log(activiteit);
+
 
             // Maak opleidingen form leeg, voor de volgende opleiding die opgevoerd kan worden
             $("#naam_ac").val("");
@@ -221,7 +214,7 @@ $(document).ready(function () {
             alert("Vul eerst de vereiste velden in!");
         }
 
-        console.log(rij);
+
 
 
 
@@ -239,10 +232,6 @@ $(document).ready(function () {
         for (i = 0; i < CV.opleidingen.length; i++) {
             rij = CV.opleidingen[i];
 
-            console.log(rij.naamOpleiding[i]);
-            console.log(rij.naamOpleiding);
-
-            console.log("De xPosO is " + xPosO + "en de yPosO variabele is: " + yPosO);
 
 
             // x-coördinaat wordt bepaald door xPosO, y-coördinaat wordt gedefinieerd door yPosO
@@ -316,7 +305,7 @@ $(document).ready(function () {
             huidigeRijOpleidingen++;
 
             toonToegevoegdeOpleiding(opleiding);
-            console.log(opleiding);
+
 
             // Maak opleidingen form leeg, voor de volgende opleiding die opgevoerd kan worden
             $("#naam_opleiding").val("");
@@ -329,7 +318,7 @@ $(document).ready(function () {
             alert("Maximum aantal opleidingen bereikt");
         }
 
-        console.log(JSON.stringify(CV.opleidingen));
+
 
 
     });

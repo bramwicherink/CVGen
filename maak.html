@@ -20,7 +20,7 @@
 
     <script>
         function save() {
-            let fieldValue = CV;
+            let fieldValue = document.getElementById('voornaam').value;
             console.log(fieldValue);
             localStorage.setItem('text', fieldValue);
         }
