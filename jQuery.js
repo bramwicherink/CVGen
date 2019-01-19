@@ -45,7 +45,7 @@ $(document).ready(function () {
     let maxRijenActiviteit = 6;
 
 
-    
+
 
 
 
