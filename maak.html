@@ -18,22 +18,22 @@
 </head>
 <body onload="load()">
 
-<script>
-    function save() {
-        let fieldValue = document.getElementsByClassName('input-field').value;
-        localStorage.setItem('text', fieldValue);
-    }
-
-    function load() {
-        let storedValue = localStorage.getItem('text');
-        if(storedValue) {
-            document.getElementById('input-field').value = storedValue;
+    <script>
+        function save() {
+            let fieldValue = document.getElementById('voornaam').value;
+            localStorage.setItem('text', fieldValue);
         }
-    }
-</script>
+
+        function load() {
+            let storedValue = localStorage.getItem('text');
+            if (storedValue) {
+                document.getElementById('voornaam').value = storedValue;
+            }
+        }
+    </script>
 <div class="main-container-cvmaken">
     <div class="part-of-banner">
-
+        <p>Functie die volgens Geert-Jan nog optioneel verwerkt moest worden (localStorage) werkt als Proof Of Concept (POC) bij voornaam</p>
     </div>
     <header class="header-container">
         <div class="main-text-logo"><a href="index.html"><p>CVGen.</p></a></div>
@@ -45,7 +45,7 @@
     <div class="big-parts-container">
         <div class="part-of-banner" id="part-1">
             <h3>Personalia</h3>
-            <input type="button" value="Gegevens opslaan" onclick="save()" class="opslaan"/>
+
 
 
             <div class="form-total">
@@ -72,6 +72,7 @@
                 </div>
             </div>
             <button onclick="addPersonalia();" class="btn-1-1 button next">Volgende</button>
+            <input type="button" value="Gegevens (voornaam (POC)) opslaan" onclick="save()" class="button opslaan"/>
         </div>
 
         <div class="part-of-banner" id="part-2" style="display:none;">

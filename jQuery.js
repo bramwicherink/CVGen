@@ -43,19 +43,9 @@ $(document).ready(function () {
 
     let huidigeRijActiviteit = 0;
     let maxRijenActiviteit = 6;
-    // let storedData = JSON.parse(localStorage.getItem("CV.personalia"));
 
-    // $('.opslaan-personalia').click(function()
-    // {
-    //     localStorage.setItem("CV.personalia", JSON.stringify(CV.personalia));
-    //
-    // });
-    //
-    // $('.terughalen-personalia').click(function()
-    // {
-    //     storedData();
-    // });
 
+    
 
 
 
@@ -234,7 +224,6 @@ $(document).ready(function () {
         console.log(rij);
 
 
-        // hier foreach
 
 
 
@@ -342,10 +331,7 @@ $(document).ready(function () {
 
         console.log(JSON.stringify(CV.opleidingen));
 
-        let myObj_serialized = JSON.stringify(CV.personalia);
-        localStorage.setItem("CV.personalia", myObj_serialized);
-        let myObj_deserialized = JSON.parse(localStorage.getItem(myObj_serialized));
-        console.log(myObj_deserialized);
+
     });
     $('.back').click(function () {
         $(this).parent().hide().prev().show();//hide parent and show previous
